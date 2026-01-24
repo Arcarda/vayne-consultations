@@ -151,9 +151,19 @@ body {
 }
 
 .hero h1:hover {
-    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
-    color: var(--primary-red);
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     cursor: default;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        text-shadow: 0 0 10px var(--primary-red), 0 0 20px var(--primary-red);
+        color: var(--text-white);
+    }
+    50% {
+        text-shadow: 0 0 25px var(--primary-red), 0 0 50px var(--primary-red), 0 0 80px var(--dark-red);
+        color: var(--primary-red);
+    }
 }
 
 .subtitle {
