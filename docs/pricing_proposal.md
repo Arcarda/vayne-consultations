@@ -1,13 +1,13 @@
 # Pricing Proposal & Service Structure
 
-**Client:** Vayne Consultations & Creations
+**Client:** Vayne Consulting & Creations
 **Owner & Proprietor:** Vayne
 **Date:** January 22, 2026
 **Currency:** CAD $
 
 ## Executive Summary
 
-This proposal outlines the pricing structure for Vayne Consultations' digital presence and consultation services. Estimates are based on current Canadian market standards for high-end web development and specialized industry consulting.
+This proposal outlines the pricing structure for Vayne Consulting's digital presence and consultation services. Estimates are based on current Canadian market standards for high-end web development and specialized industry consulting.
 
 ## 1. Web Development & Deployment (One-Time Costs)
 

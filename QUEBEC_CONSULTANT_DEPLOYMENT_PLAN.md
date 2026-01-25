@@ -1,15 +1,15 @@
-# ⚜️ Quebec Consultant Deployment Plan: Vayne Consultations
+# ⚜️ Quebec Consultant Deployment Plan: Vayne Consulting
 
 > **Status**: DRAFT  
 > **Region**: Quebec, Canada  
 > **Year**: 2025  
-> **Entity**: Vayne Consultations  
+> **Entity**: Vayne Consulting  
 
 ---
 
 ## 📅 Executive Summary
 
-This document serves as the master deployment guide for launching **Vayne Consultations** in Quebec. It covers valid legal structures, mandatory government registrations, tax compliance (GST/QST), and operational requirements mandated by Quebec law (including Bill 96).
+This document serves as the master deployment guide for launching **Vayne Consulting** in Quebec. It covers valid legal structures, mandatory government registrations, tax compliance (GST/QST), and operational requirements mandated by Quebec law (including Bill 96).
 
 ---
 
@@ -53,13 +53,14 @@ This document serves as the master deployment guide for launching **Vayne Consul
 
 ### 2.2 Banking
 
-* Open a dedicated **Business Bank Account**.
+- Open a dedicated **Business Bank Account**.
+
 - **Do not** mix personal and business funds.
 - **Bank Recommendations**: Desjardins, NBC (National Bank), or RBC often have low-fee simplified accounts for consultants.
 
 ### 2.3 Income Tax Installments
 
-* Be prepared that after your first year, Revenu Québec and CRA may require **quarterly tax installments** based on the previous year's earnings. Set aside ~25-30% of gross revenue for taxes.
+- Be prepared that after your first year, Revenu Québec and CRA may require **quarterly tax installments** based on the previous year's earnings. Set aside ~25-30% of gross revenue for taxes.
 
 ---
 
@@ -68,18 +69,21 @@ This document serves as the master deployment guide for launching **Vayne Consul
 ### 3.1 Bill 96 & Language Laws
 
 Quebec has strict French language laws.
+
 - **Contracts**: Standard contracts must be in French unless the client explicitly requests English. *Best practice: Have a "Language Clause" where the client opts for English.*
-- **Website**: Must be available in French. (Vayne Consultations should have a FR toggle).
+- **Website**: Must be available in French. (Vayne Consulting should have a FR toggle).
 - **Software/OS**: Businesses must ensure work software is available in French if employees are hired.
 
 ### 3.2 Permits & Zoning
 
-* **Home Office**: Generally permitted for consulting. Check municipal bylaws if you plan to have clients visit your home (often restricted).
+- **Home Office**: Generally permitted for consulting. Check municipal bylaws if you plan to have clients visit your home (often restricted).
+
 - **Permit Tools**: Use [PerLE](https://services.bizpal-perle.ca/) to check for specific municipal permits.
 
 ### 3.3 Insurance
 
-* **Commercial General Liability (CGL)**: Protects against "slip and fall" or accidental damage to client property.
+- **Commercial General Liability (CGL)**: Protects against "slip and fall" or accidental damage to client property.
+
 - **Professional Liability (E&O)**: *Critical for consultants.* Protects against claims of negligence or bad advice causing financial loss to the client.
 
 ---
@@ -88,7 +92,7 @@ Quebec has strict French language laws.
 
 ### 4.1 Digital Presence Setup
 
-- [ ] **Domain**: Ensure `vayneconsultations.com` (or equivalent) is secured.
+- [ ] **Domain**: Ensure `vayneconsulting.com` (or equivalent) is secured.
 - [ ] **Website**: Deploy the static site (as per `deployment_guide.md`).
 - [ ] **LinkedIn**: Create a Company Page linked to your personal profile.
 - [ ] **Google Business Profile**: Set up verification (use a PO Box if you don't want home address public, though Google verification can be tricky with PO Boxes).
