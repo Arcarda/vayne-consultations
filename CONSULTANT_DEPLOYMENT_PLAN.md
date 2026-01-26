@@ -1,15 +1,15 @@
-# ⚜️ Quebec Consultant Deployment Plan: Vayne Consulting
+# ⚜️ Consultant Deployment Plan: Vayne Consulting
 
 > **Status**: DRAFT  
-> **Region**: Quebec, Canada  
-> **Year**: 2025  
+> **Region**: Global / Remote
+> **Year**: 2026  
 > **Entity**: Vayne Consulting  
 
 ---
 
 ## 📅 Executive Summary
 
-This document serves as the master deployment guide for launching **Vayne Consulting** in Quebec. It covers valid legal structures, mandatory government registrations, tax compliance (GST/QST), and operational requirements mandated by Quebec law (including Bill 96).
+This document serves as the master deployment guide for launching **Vayne Consulting**. It covers valid legal structures, mandatory registrations, tax compliance, and operational requirements.
 
 ---
 
@@ -33,10 +33,10 @@ This document serves as the master deployment guide for launching **Vayne Consul
 1. **Access Portal**: Go to [Registraire des entreprises](https://www.quebec.ca/entreprises-et-travailleurs-autonomes/demarrer-entreprise/immatriculer-constituer-entreprise).
 2. **Service**: Select "Immatriculer une personne physique" (for Sole Prop).
 3. **Info Needed**:
-    - Social Insurance Number (SIN).
-    - Business address (can be home address).
-    - Business activities (Consulting/Conseils).
-4. **Outcome**: You will receive a **NEQ** (Numéro d'entreprise du Québec).
+    - Tax ID / Social Security Number.
+    - Business address.
+    - Business activities (Consulting).
+4. **Outcome**: You will receive a Business Registration Number.
 
 ---
 
@@ -48,8 +48,8 @@ This document serves as the master deployment guide for launching **Vayne Consul
 
 - **Federal**: GST (5%)
 - **Provincial**: QST (9.975%)
-- **Registration**: [Revenu Québec - Register for Tax Files](https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/registering-for-the-gsthst-and-qst/)
-- **Note**: Even if under $30k, voluntary registration allows you to claim Input Tax Credits (ITCs) on business expenses (laptops, software, home office).
+- **Registration**: Register with local tax authorities for sales tax/VAT if applicable.
+- **Note**: Voluntary registration often allows you to claim credits on business expenses (laptops, software, home office).
 
 ### 2.2 Banking
 
@@ -60,19 +60,16 @@ This document serves as the master deployment guide for launching **Vayne Consul
 
 ### 2.3 Income Tax Installments
 
-- Be prepared that after your first year, Revenu Québec and CRA may require **quarterly tax installments** based on the previous year's earnings. Set aside ~25-30% of gross revenue for taxes.
+- Be prepared that after your first year, tax authorities may require **quarterly tax installments** based on the previous year's earnings. Set aside ~25-30% of gross revenue for taxes.
 
 ---
 
 ## ⚡ Phase 3: Operations & Compliance
 
-### 3.1 Bill 96 & Language Laws
+### 3.1 Language & Localization
 
-Quebec has strict French language laws.
-
-- **Contracts**: Standard contracts must be in French unless the client explicitly requests English. *Best practice: Have a "Language Clause" where the client opts for English.*
-- **Website**: Must be available in French. (Vayne Consulting should have a FR toggle).
-- **Software/OS**: Businesses must ensure work software is available in French if employees are hired.
+- **Contracts**: Ensure contracts are in the primary language of commerce for the region.
+- **Website**: maintain localization support as needed for target demographic.
 
 ### 3.2 Permits & Zoning
 
@@ -100,7 +97,7 @@ Quebec has strict French language laws.
 ### 4.2 Client Material
 
 - [ ] **Standard Contract/MSA**: Have a Master Services Agreement ready.
-- [ ] **Invoice Template**: Must include your NEQ, GST, and QST numbers clearly.
+- [ ] **Invoice Template**: Must include your Tax/Business numbers clearly.
 
 ---
 
