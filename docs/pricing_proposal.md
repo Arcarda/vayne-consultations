@@ -1,19 +1,19 @@
 # Pricing Proposal & Service Structure
 
-**Client:** Vayne Consultations & Creations
+**Client:** Vayne Consulting & Creations
 **Owner & Proprietor:** Vayne
 **Date:** January 22, 2026
 **Currency:** CAD $
 
 ## Executive Summary
 
-This proposal outlines the pricing structure for Vayne Consultations' digital presence and consultation services. Estimates are based on current Canadian market standards for high-end web development and specialized industry consulting.
+This proposal outlines the pricing structure for Vayne Consulting's digital presence and consultation services. Estimates are based on current Canadian market standards for high-end web development and specialized industry consulting.
 
 ## 1. Web Development & Deployment (One-Time Costs)
 
 ### **Package A: The "Chic" Launch (Current Scope)**
 
-*A high-impact, single-page application focused on brand identity and core verticals (Music, Food, Games).*
+*A high-impact, single-page application focused on brand identity and core verticals (Music, Culinary Arts, Writing).*
 
 * **Design & UI/UX**: Custom "Red/Black" luxury aesthetic, responsive mobile design, high-fidelity mockups.
 * **Development**: HTML5/CSS3 (Advanced Animations), Vanilla JS interactivity, Optimized performance.
@@ -58,12 +58,12 @@ For maintenance, updates, or features outside the fixed scope:
   * *Typical Range*: **$5,000 - $15,000+**
   * *Includes*: Complete go-to-market strategy, vendor partner setup, promotional campaign management, and operational scaling.
 
-**Model C: Information Security (SMB Specialization)**
+**Model C: Security Audit, Hardening & Review**
 
-* **Vulnerability Assessment**: **$1,500 - $3,000** (Per Instance)
-  * *Includes*: External/Internal scanning, risk report, and remediation roadmap.
-* **Full Security Audit & Policy Framework**: **$4,500+**
-  * *Includes*: Comprehensive penetration testing, staff security training, and compliance policy creation (PII/GDPR).
+* **Infrastructure Hardening & Audit**: **$2,500 - $5,000** (Per Instance)
+  * *Includes*: External/Internal vulnerability assessment, architectural review, and a complete hardening roadmap.
+* **Strategic Security Consultation & Policy Review**: **$4,500+**
+  * *Includes*: Comprehensive compliance audit, staff security training, and strategic policy development (PII/GDPR/Bill 96).
 
 ## 3. Deployment & Hosting (Recurring)
 

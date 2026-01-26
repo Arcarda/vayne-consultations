@@ -25,6 +25,10 @@ body {
     scroll-behavior: smooth;
 }
 
+html {
+    scroll-padding-top: 100px;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -156,10 +160,13 @@ body {
 }
 
 @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 0 0 10px var(--primary-red), 0 0 20px var(--primary-red);
         color: var(--text-white);
     }
+
     50% {
         text-shadow: 0 0 25px var(--primary-red), 0 0 50px var(--primary-red), 0 0 80px var(--dark-red);
         color: var(--primary-red);
@@ -291,6 +298,69 @@ body {
     padding-right: 10px;
 }
 
+/* Framework Section (Advisory Model) */
+.framework-section {
+    padding: 8rem 10%;
+    text-align: center;
+    background-color: var(--bg-black);
+    position: relative;
+    z-index: 10;
+}
+
+.framework-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.framework-section .divider {
+    margin: 0 auto 4rem auto;
+    background-color: var(--primary-red);
+}
+
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.framework-step {
+    padding: 2.5rem 1.5rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.framework-step:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.03);
+}
+
+.step-number {
+    font-family: var(--font-heading);
+    color: var(--primary-red);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    opacity: 0.8;
+}
+
+.framework-step h3 {
+    font-family: var(--font-serif);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.framework-step p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+}
+
 /* Footer */
 footer {
     padding: 5rem 10%;
@@ -365,6 +435,30 @@ footer {
     font-style: italic;
 }
 
+/* Background Utilities (Replacing Inline Styles) */
+.bg-branding { background-image: url('assets/images/branding_section_bg.png'); }
+.bg-security { background-image: url('assets/images/security_section_bg.png'); }
+.bg-music { background-image: url('assets/images/music_section_bg_1769134299524.png'); }
+.bg-cuisine { background-image: url('assets/images/food_section_bg_1769134312824.png'); }
+.bg-writing { background-image: url('assets/images/writing_bg.png'); }
+.bg-about { background-image: url('assets/images/about_section_bg.png'); }
+
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-white);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .hero h1 {
@@ -387,5 +481,43 @@ footer {
 
     .contact-form {
         flex-direction: column;
+    }
+
+    /* Mobile Nav */
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background-color: rgba(0, 0, 0, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.5s ease;
+        z-index: 999;
+        border-left: 1px solid var(--glass-border);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vayne Consultations | Elevate Your Lifestyle</title>
+    <title>Vayne Consultations | The Polymath Advantage</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,12 +20,18 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">VAYNE</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
         <ul class="nav-links">
             <li><a href="#branding">Branding</a></li>
             <li><a href="#security">Security</a></li>
             <li><a href="#music">Music</a></li>
             <li><a href="#cuisine">Cuisine</a></li>
             <li><a href="#games">Games</a></li>
+            <li><a href="#writing">Writing</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact" class="cta-btn">Contact</a></li>
         </ul>
@@ -44,6 +50,36 @@
             <div class="line"></div>
         </div>
     </header>
+
+    <!-- Framework Section -->
+    <section class="framework-section">
+        <h2>The Vayne Methodology</h2>
+        <div class="divider"></div>
+        <div class="framework-grid">
+            <div class="framework-step">
+                <span class="step-number">01</span>
+                <h3>Audit</h3>
+                <p>Forensic analysis of your current infrastructure, brand, or operational model to identify
+                    vulnerabilities and inefficiencies.</p>
+            </div>
+            <div class="framework-step">
+                <span class="step-number">02</span>
+                <h3>Architecture</h3>
+                <p>Strategic design of bespoke systems—whether digital, culinary, or narrative—to scale your vision.</p>
+            </div>
+            <div class="framework-step">
+                <span class="step-number">03</span>
+                <h3>Hardening</h3>
+                <p>Rigorous implementation of defense mechanisms and quality controls to ensure resilience against
+                    volatility.</p>
+            </div>
+            <div class="framework-step">
+                <span class="step-number">04</span>
+                <h3>Legacy</h3>
+                <p>Establishing self-sustaining systems that ensure long-term relevance and market authority.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Branding Section -->
     <section id="branding" class="vertical-section reverse">
@@ -72,7 +108,7 @@
     </section>
 
     <!-- Music Section -->
-    <section id="music" class="vertical-section">
+    <section id="music" class="vertical-section reverse">
         <div class="bg-image" style="background-image: url('assets/images/music_section_bg_1769134299524.png');">
         </div>
         <div class="content blur-card">
@@ -85,7 +121,7 @@
     </section>
 
     <!-- Cuisine Section -->
-    <section id="cuisine" class="vertical-section reverse">
+    <section id="cuisine" class="vertical-section">
         <div class="bg-image" style="background-image: url('assets/images/food_section_bg_1769134312824.png');">
         </div>
         <div class="content blur-card">
@@ -98,7 +134,7 @@
     </section>
 
     <!-- Games Section -->
-    <section id="games" class="vertical-section">
+    <section id="games" class="vertical-section reverse">
         <div class="bg-image" style="background-image: url('assets/images/games_section_bg_1769134326613.png');">
         </div>
         <div class="content blur-card">
@@ -107,6 +143,50 @@
             <p>Interactive Strategy. Monetizing immersion. We build sustainable ecosystems for studios and brands using
                 data-driven foresight.</p>
             <a href="#" class="explore-btn">Level Up Business</a>
+        </div>
+    </section>
+
+    <!-- Case Briefs Section -->
+    <section class="framework-section" style="background-color: #080808;">
+        <h2>Confidential Case Briefs</h2>
+        <div class="divider"></div>
+        <div class="framework-grid">
+            <div class="framework-step" style="border-left: 3px solid var(--primary-red);">
+                <span class="step-number" style="font-size: 0.9rem; letter-spacing: 1px;">HOSPITALITY //
+                    URBAN</span>
+                <h3 style="font-size: 1.1rem; margin-top: 5px;">Operational Restructure</h3>
+                <p>Complete workflow audit for a high-volume hospitality group. Optimized inventory logic and
+                    kitchen hierarchy, resulting in a 30% reduction in overhead.</p>
+            </div>
+            <div class="framework-step" style="border-left: 3px solid var(--primary-red);">
+                <span class="step-number" style="font-size: 0.9rem; letter-spacing: 1px;">MUSIC // REMOTE</span>
+                <h3 style="font-size: 1.1rem; margin-top: 5px;">Artist Brand Development</h3>
+                <p>Strategic overhaul for an independent electronic artist. Developed "mythos-based" marketing
+                    assets and robust direct-to-fan sales funnels.</p>
+            </div>
+            <div class="framework-step" style="border-left: 3px solid var(--primary-red);">
+                <span class="step-number" style="font-size: 0.9rem; letter-spacing: 1px;">INFOSEC //
+                    CORPORATE</span>
+                <h3 style="font-size: 1.1rem; margin-top: 5px;">SMB Compliance Audit</h3>
+                <p>Forensic review of a legal firm's digital perimeter. Identified critical data exposures and
+                    implemented a data sovereignty framework.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Writing Section -->
+    <section id="writing" class="vertical-section">
+        <div class="bg-image" style="background-color: #111;">
+            <!-- Placeholder for writing bg if needed, or keeping dark -->
+        </div>
+        <div class="content blur-card">
+            <h2>Writing & Publishing</h2>
+            <div class="divider"></div>
+            <p>Field manuals for the modern mind. Strategic literature for self-command, philosophy, and mastering
+                the internal mutiny.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: #aaa;"><em>Now offering precision editorial
+                    services and creative direction for select manuscripts.</em></p>
+            <a href="https://theredbook.netlify.app" class="explore-btn">Read The Red Book</a>
         </div>
     </section>
 
