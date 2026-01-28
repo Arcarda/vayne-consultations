@@ -84,9 +84,10 @@ html {
 .logo {
     font-family: var(--font-heading);
     font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
     color: var(--primary-red);
+    white-space: nowrap;
 }
 
 .nav-links {
