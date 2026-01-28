@@ -460,6 +460,26 @@ footer {
     font-style: italic;
 }
 
+.footer-links {
+    margin: 1rem 0;
+}
+
+.footer-link {
+    color: var(--text-white);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--primary-red);
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
+}
+
+.footer-link:hover {
+    opacity: 0.7;
+}
+
 /* Background Utilities (Replacing Inline Styles) */
 .bg-branding {
     background-image: url('assets/images/branding_section_bg.png');
