@@ -314,6 +314,10 @@ html {
     margin-bottom: 1rem;
 }
 
+.section-dark {
+    background-color: #080808 !important;
+}
+
 .framework-section .divider {
     margin: 0 auto 4rem auto;
     background-color: var(--primary-red);
@@ -329,7 +333,7 @@ html {
     padding: 2.5rem 1.5rem;
     border: 1px solid var(--glass-border);
     border-radius: 4px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
     transition: all 0.3s ease;
     text-align: left;
 }
@@ -337,7 +341,7 @@ html {
 .framework-step:hover {
     border-color: var(--primary-red);
     transform: translateY(-5px);
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .step-number {
@@ -357,8 +361,28 @@ html {
 
 .framework-step p {
     font-size: 0.9rem;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.6);
     line-height: 1.5;
+}
+
+.placeholder-step {
+    border-style: dashed;
+    opacity: 0.7;
+    filter: grayscale(1);
+}
+
+.placeholder-step:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.reference-note {
+    margin-top: 3rem;
+    color: #555;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 /* Footer */
@@ -436,12 +460,18 @@ footer {
 }
 
 /* Background Utilities (Replacing Inline Styles) */
-.bg-branding { background-image: url('assets/images/branding_section_bg.png'); }
-.bg-security { background-image: url('assets/images/security_section_bg.png'); }
-.bg-music { background-image: url('assets/images/music_section_bg_1769134299524.png'); }
-.bg-cuisine { background-image: url('assets/images/food_section_bg_1769134312824.png'); }
-.bg-writing { background-image: url('assets/images/writing_bg.png'); }
-.bg-about { background-image: url('assets/images/about_section_bg.png'); }
+.bg-branding {
+    background-image: url('assets/images/branding_section_bg.png');
+}
+
+.bg-deployment {
+    background-image: url('assets/images/security_section_bg.png');
+}
+
+/* Reusing security bg for deployment for now */
+.bg-about {
+    background-image: url('assets/images/about_section_bg.png');
+}
 
 
 /* Hamburger Menu */
