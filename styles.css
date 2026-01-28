@@ -494,6 +494,11 @@ footer {
     background-image: url('assets/images/security_section_bg.png');
 }
 
+.bg-growth {
+    background-image: url('assets/images/branding_section_bg.png');
+    filter: hue-rotate(45deg) brightness(0.3);
+}
+
 /* Reusing security bg for deployment for now */
 .bg-about {
     background-image: url('assets/images/about_section_bg.png');
