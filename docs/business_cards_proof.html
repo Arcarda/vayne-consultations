@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vayne Consultations - Business Card Proofs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --card-width: 3.5in;
+            --card-height: 2in;
+            --scale: 2;
+            /* Scale up for better screen viewing */
+            --bleed: 0.125in;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            gap: 60px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #555;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .concept-row {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .card-container {
+            width: calc(var(--card-width) * var(--scale));
+            height: calc(var(--card-height) * var(--scale));
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        /* --- Common --- */
+        .card {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* --- Concept 1: The Void --- */
+        .void-front {
+            background-color: #050505;
+            /* Deep Black */
+            color: #fff;
+        }
+
+        .void-front .logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 120px;
+            color: #000;
+            /* Spot UV Effect Simulation */
+            text-shadow: 0 0 0 rgba(255, 0, 0, 0.8);
+            -webkit-text-stroke: 2px #cc0000;
+            position: relative;
+        }
+
+        .void-front .logo::after {
+            content: 'V';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: transparent;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+            -webkit-background-clip: text;
+        }
+
+        .void-back {
+            background-color: #050505;
+            color: #fff;
+            padding: 30px;
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
+
+        .void-info {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .void-info strong {
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        /* --- Concept 2: The Signal --- */
+        .signal-front {
+            background-color: #1a1a1a;
+            position: relative;
+        }
+
+        .signal-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 35%;
+            width: 2px;
+            background-color: #ff0033;
+            box-shadow: 0 0 10px #ff0033;
+        }
+
+        .signal-text {
+            position: absolute;
+            right: 38%;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            /* Vertical Text */
+            transform-origin: center right;
+            font-family: 'JetBrains Mono', monospace;
+            color: #ccc;
+            font-size: 16px;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        .signal-text span {
+            color: #ff0033;
+        }
+
+        /* highlight Vayne */
+
+        .signal-back {
+            background-color: #000;
+            background-image: radial-gradient(#333 1px, transparent 1px);
+            background-size: 20px 20px;
+            /* Circuit dots */
+        }
+
+        .qr-placeholder {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #ff0033;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff0033;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.2);
+        }
+
+        .initiate {
+            margin-top: 15px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #ff0033;
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        /* --- Concept 3: The Manuscript --- */
+        .manuscript-front {
+            background-color: #111;
+            /* Linen texture sim */
+            background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3h1v1H1V3zm2-2h1v1H3V1z' fill='%23222' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .manuscript-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 80px;
+            font-style: italic;
+            /* Deep Red Metallic Foil */
+            background: linear-gradient(to bottom, #8a0d0d, #e31e1e, #610404);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 2px 0px rgba(0, 0, 0, 0.5));
+        }
+
+        .manuscript-back {
+            background-color: #080808;
+        }
+
+        .manuscript-list {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            color: #c5a059;
+            /* Gold */
+            /* Gold Gradient */
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+            text-align: center;
+            line-height: 2.5;
+        }
+
+        .manuscript-url {
+            margin-top: 20px;
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Vayne Consultations - Design Proofs</h1>
+
+    <!-- Concept 1 -->
+    <h2>Concept 1: The Void</h2>
+    <div class="concept-row">
+        <!-- Front -->
+        <div class="card-container">
+            <div class="card void-front">
+                <div class="logo">V</div>
+            </div>
+        </div>
+        <!-- Back -->
+        <div class="card-container">
+            <div class="card void-back">
+                <div class="void-info">
+                    <strong>VAYNE</strong><br>
+                    Proprietor<br>
+                    vayne.consulting
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Concept 2 -->
+    <h2>Concept 2: The Signal</h2>
+    <div class="concept-row">
+        <!-- Front -->
+        <div class="card-container">
+            <div class="card signal-front">
+                <div class="signal-line"></div>
+                <div class="signal-text"><span>VAYNE</span> CONSULTATIONS</div>
+            </div>
+        </div>
+        <!-- Back -->
+        <div class="card-container">
+            <div class="card signal-back">
+                <div class="qr-placeholder">QR CODE</div>
+                <div class="initiate">INITIATE_CONTACT</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Concept 3 -->
+    <h2>Concept 3: The Manuscript</h2>
+    <div class="concept-row">
+        <!-- Front -->
+        <div class="card-container">
+            <div class="card manuscript-front">
+                <div class="manuscript-title">Vayne</div>
+            </div>
+        </div>
+        <!-- Back -->
+        <div class="card-container">
+            <div class="card manuscript-back">
+                <div class="manuscript-list">
+                    MUSIC • CULINARY<br>
+                    GAMES • SECURITY
+                </div>
+                <div class="manuscript-url">vayne.consulting</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

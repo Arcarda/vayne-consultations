@@ -580,3 +580,24 @@ footer {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 }
+
+/* Language Switcher */
+.lang-switch {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.lang-switch a {
+    color: var(--text-white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.lang-switch a:hover {
+    color: var(--primary-red);
+}
+
+.lang-switch .current-lang {
+    color: var(--primary-red);
+    font-weight: 600;
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAYNE // SIGNAL_RECEIVED</title>
+    <link rel="alternate" hreflang="en" href="initiate.html">
+    <link rel="alternate" hreflang="fr" href="initiate-fr.html">
+    <style>
+        :root {
+            --signal-red: #ff0000;
+            --bg-black: #000000;
+            --term-green: #33ff00;
+            /* Optional, but let's stick to Red for Vayne */
+            --term-text: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--term-text);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            border: 1px solid #333;
+            padding: 2rem;
+            position: relative;
+            background: rgba(10, 10, 10, 0.9);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--signal-red);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: 5px;
+            position: relative;
+        }
+
+        h1::before,
+        h1::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-black);
+        }
+
+        h1::before {
+            left: 2px;
+            text-shadow: -1px 0 red;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        h1::after {
+            left: -2px;
+            text-shadow: -1px 0 blue;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(11px, 9999px, 81px, 0);
+            }
+
+            20% {
+                clip: rect(68px, 9999px, 7px, 0);
+            }
+
+            40% {
+                clip: rect(22px, 9999px, 92px, 0);
+            }
+
+            60% {
+                clip: rect(2px, 9999px, 26px, 0);
+            }
+
+            80% {
+                clip: rect(51px, 9999px, 4px, 0);
+            }
+
+            100% {
+                clip: rect(38px, 9999px, 88px, 0);
+            }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% {
+                clip: rect(65px, 9999px, 100px, 0);
+            }
+
+            20% {
+                clip: rect(28px, 9999px, 86px, 0);
+            }
+
+            40% {
+                clip: rect(2px, 9999px, 32px, 0);
+            }
+
+            60% {
+                clip: rect(81px, 9999px, 63px, 0);
+            }
+
+            80% {
+                clip: rect(4px, 9999px, 18px, 0);
+            }
+
+            100% {
+                clip: rect(93px, 9999px, 56px, 0);
+            }
+        }
+
+        .terminal-log {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            border-left: 2px solid var(--signal-red);
+            padding-left: 1rem;
+        }
+
+        .typing-line {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-bottom: 0.5rem;
+            animation: typing 2s steps(40, end);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: 1px solid var(--signal-red);
+            color: var(--signal-red);
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background: var(--signal-red);
+            color: var(--bg-black);
+            box-shadow: 0 0 15px var(--signal-red);
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #444;
+            text-align: center;
+        }
+
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 0, 0, 0.2);
+            animation: scan 4s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% {
+                top: -5%;
+            }
+
+            100% {
+                top: 105%;
+            }
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .lang-switch a {
+            color: var(--signal-red);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .lang-switch a:hover {
+            color: #fff;
+        }
+
+        .lang-switch .current-lang {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lang-switch">
+        <span class="current-lang">EN</span> | <a href="initiate-fr.html" title="Français">FR</a>
+    </div>
+    <div class="scan-line"></div>
+    <div class="container">
+        <h1 data-text="VAYNE//SYSTEM">VAYNE//SYSTEM</h1>
+
+        <div class="terminal-log">
+            <span class="typing-line">> ANALYZING SIGNAL SOURCE...</span>
+            <span class="typing-line" style="animation-delay: 1s; width: 0; animation-fill-mode: forwards;">>
+                ENCRYPTION: NONE</span>
+            <span class="typing-line" style="animation-delay: 2s; width: 0; animation-fill-mode: forwards;">> TARGET:
+                IDENTIFIED</span>
+            <span class="typing-line" style="animation-delay: 3s; width: 0; animation-fill-mode: forwards;">> STATUS:
+                OPPORTUNITY DETECTED</span>
+        </div>
+
+        <p style="margin-bottom: 2rem; font-size: 0.8rem; text-align: justify;">
+            You have accessed the private channel. This is not a marketing funnel. This is a direct line. State your
+            business.
+        </p>
+
+        <a href="mailto:vayne.consulting@gmail.com?subject=SIGNAL_RECEIVED%20%7C%20Inquiry" class="cta-btn">
+            INITIATE_CONTACT
+        </a>
+
+        <div class="footer">
+            SECURE CONNECTION ESTABLISHED<br>
+            ID: V-772-SIG
+        </div>
+    </div>
+
+    <script>
+        // Simple script to enhance the terminal feel if needed
+        console.log("System Ready.");
+    </script>
+</body>
+
+</html>

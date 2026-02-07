@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcarda | Links</title>
+    <meta name="description" content="All links in one place - Vayne Consulting, The Red Book, Streaming, and more.">
+    
+    <style>
+        :root {
+            --bg-primary: #0D1117;
+            --bg-card: #161B22;
+            --bg-card-hover: #21262D;
+            --text-primary: #E6EDF3;
+            --text-secondary: #8B949E;
+            --accent: #58A6FF;
+            --accent-glow: rgba(88, 166, 255, 0.2);
+            --border: #30363D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #A371F7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1rem;
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            padding-left: 0.5rem;
+        }
+
+        /* Link Cards */
+        .link-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .link-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .link-content {
+            flex: 1;
+        }
+
+        .link-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .link-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .link-arrow {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+        }
+
+        /* Featured Card */
+        .link-card.featured {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.1), rgba(163, 113, 247, 0.1));
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="avatar">⚡</div>
+            <h1>Arcarda</h1>
+            <p>Builder • Consultant • Creator</p>
+        </header>
+
+        <!-- Featured -->
+        <section class="section">
+            <div class="section-title">🔥 Featured</div>
+            
+            <a href="https://vayneconsulting.com" target="_blank" class="link-card featured">
+                <span class="link-icon">⚜️</span>
+                <div class="link-content">
+                    <div class="link-title">Vayne Consulting</div>
+                    <div class="link-desc">Premium re-branding & AI deployment</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+        </section>
+
+        <!-- Products -->
+        <section class="section">
+            <div class="section-title">📚 Products</div>
+            
+            <a href="#" target="_blank" class="link-card">
+                <span class="link-icon">📕</span>
+                <div class="link-content">
+                    <div class="link-title">The Red Book</div>
+                    <div class="link-desc">Field manual — Coming to Amazon KDP</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+            
+            <a href="#" target="_blank" class="link-card">
+                <span class="link-icon">📓</span>
+                <div class="link-content">
+                    <div class="link-title">Official Field Journal</div>
+                    <div class="link-desc">Companion workbook — Coming soon</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+        </section>
+
+        <!-- Content -->
+        <section class="section">
+            <div class="section-title">🎬 Content</div>
+            
+            <a href="#" target="_blank" class="link-card">
+                <span class="link-icon">📺</span>
+                <div class="link-content">
+                    <div class="link-title">Twitch</div>
+                    <div class="link-desc">Live streams & gaming content</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+            
+            <a href="#" target="_blank" class="link-card">
+                <span class="link-icon">🎥</span>
+                <div class="link-content">
+                    <div class="link-title">YouTube</div>
+                    <div class="link-desc">Highlights, devlogs, tutorials</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+            
+            <a href="#" target="_blank" class="link-card">
+                <span class="link-icon">🎵</span>
+                <div class="link-content">
+                    <div class="link-title">TikTok</div>
+                    <div class="link-desc">Short-form clips & tips</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+        </section>
+
+        <!-- Social -->
+        <section class="section">
+            <div class="section-title">🌐 Social</div>
+            
+            <a href="#" target="_blank" class="link-card">
+                <span class="link-icon">💼</span>
+                <div class="link-content">
+                    <div class="link-title">LinkedIn</div>
+                    <div class="link-desc">Professional updates & articles</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+            
+            <a href="#" target="_blank" class="link-card">
+                <span class="link-icon">🐦</span>
+                <div class="link-content">
+                    <div class="link-title">Twitter / X</div>
+                    <div class="link-desc">Building in public</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+            
+            <a href="#" target="_blank" class="link-card">
+                <span class="link-icon">💬</span>
+                <div class="link-content">
+                    <div class="link-title">Discord</div>
+                    <div class="link-desc">Community & support</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+        </section>
+
+        <!-- Games -->
+        <section class="section">
+            <div class="section-title">🎮 Games (In Development)</div>
+            
+            <a href="#" target="_blank" class="link-card">
+                <span class="link-icon">🏭</span>
+                <div class="link-content">
+                    <div class="link-title">Arc_Tech_Project_1</div>
+                    <div class="link-desc">Premium idle factory RPG</div>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ⚡ by Arcarda</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://vayneconsulting.com">vayneconsulting.com</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

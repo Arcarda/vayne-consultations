@@ -11,22 +11,37 @@ This proposal outlines the pricing structure for Vayne Consulting's digital pres
 
 ## 1. Web Development & Deployment (One-Time Costs)
 
-### **Package A: The "Chic" Launch (Current Scope)**
+### **Tier 1: "The Re-Branding Package" (Productized Service)**
 
-*A high-impact, single-page application focused on brand identity and core verticals (Music, Culinary Arts, Writing).*
+*Speed, efficiency, and the signature "Vayne" aesthetic. Best for rapid deployment.*
 
-* **Design & UI/UX**: Custom "Red/Black" luxury aesthetic, responsive mobile design, high-fidelity mockups.
-* **Development**: HTML5/CSS3 (Advanced Animations), Vanilla JS interactivity, Optimized performance.
-* **Content Strategy**: Integration of 3 core sections.
-* **Estimated Cost**: **$3,500 - $5,000 CAD**
-* **Timeline**: 2-3 Weeks
+*   **Scope**: Pre-designed "Chic" template customization (Logo, Color, Typography alignment).
+*   **Inclusions**:
+    *   Single Scroll Landing Page.
+    *   Logo Refresh (Vector Polish).
+    *   Content Polish (Headline + Bio).
+    *   Hosting Setup.
+*   **Turnaround**: 5-7 Days.
+*   **Cost**: **$1,500 CAD (Flat)**
 
-### **Package B: The "Advanced" Ecosystem (Future Expansion)**
+### **Tier 2: "The Bespoke Launch" (Custom Design)**
 
-*Multi-page architecture, CMS integration, booking systems, and dynamic content loading.*
+*Fully custom architecture tailored to specific vertical needs (Music, Culinary, Security).*
 
-* **Features**: User accounts, persistent booking database, admin dashboard, SEO optimization suite.
-* **Estimated Cost**: **$8,000 - $12,000+ CAD**
+*   **Scope**: Unique layouts, advanced animations, and specific feature integration.
+*   **Inclusions**:
+    *   Custom UI/UX Design (Figma Mockups).
+    *   Interactive Elements (WebGL/Canvas).
+    *   3 Core Sections (e.g., Portfolio, Menu/Discography, Contact).
+    *   SEO Foundation.
+*   **Cost**: **$3,500 - $5,000 CAD**
+
+### **Tier 3: "The Advanced Ecosystem" (Full Scale)**
+
+*Multi-page architecture, CMS integration, user accounts, and dynamic data.*
+
+*   **Features**: User accounts, persistent booking database, admin dashboard, complex automation.
+*   **Cost**: **$8,000 - $12,000+ CAD**
 
 ### **Hourly Development Rate**
 
