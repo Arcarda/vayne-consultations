@@ -4,167 +4,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synchro-Refuge | Centre de commandement Montréal</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Synchro-Refuge | Vayne Consulting</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Custom overrides for the Hub */
+        .hub-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            text-align: center;
+        }
+
+        .logo-small {
+            font-family: 'Syncopate', sans-serif;
+            color: #D71212;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #999);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-family: 'Inter', sans-serif;
+            color: #aaa;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .action-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .action-card:hover {
+            border-color: #D71212;
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #D71212;
+        }
+
+        .card-title {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .lang-switch span.active {
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="app-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo-area">
-                <div class="logo-icon"></div>
-                <h1>Synchro-Refuge</h1>
-            </div>
-            <nav>
-                <a href="#" class="active" data-en="Overview">Vue d'ensemble</a>
-                <a href="#" data-en="Live Map">Carte en direct</a>
-                <a href="#" data-en="Bed Inventory">Inventaire des lits</a>
-                <a href="#" data-en="Analytics">Analytique</a>
-                <a href="#" data-en="Settings">Paramètres</a>
-            </nav>
 
-            <!-- Language Toggle -->
-            <div class="lang-toggle-container">
-                <button id="langParamsBtn" onclick="toggleLanguage()" class="lang-btn">
-                    <span>🌐</span> <span id="langLabel">English</span>
-                </button>
-            </div>
+    <div class="lang-switch">
+        <span id="btn-fr" class="active" onclick="setLang('fr')">FR</span> |
+        <span id="btn-en" onclick="setLang('en')">EN</span>
+    </div>
 
-            <div class="user-profile">
-                <div class="avatar">GO</div>
-                <div class="user-info">
-                    <span class="name">George O.</span>
-                    <span class="role" data-en="Admin">Admin</span>
-                </div>
-            </div>
-        </aside>
+    <div class="hub-container">
+        <div class="logo-small">VAYNE CONSULTING PRESENTS</div>
 
-        <!-- Main Content -->
-        <main>
-            <header>
-                <h2 data-en="Montreal Command Center">Centre de commandement Montréal</h2>
-                <div class="status-indicator online">
-                    <span class="dot"></span>
-                    <span data-en="System Online • Last Sync: Just Now">Système en ligne • Dern. sync : À
-                        l'instant</span>
-                </div>
-            </header>
+        <h1 class="project-title" data-fr="Projet Synchro-Refuge" data-en="Project Synchro-Refuge">Projet Synchro-Refuge
+        </h1>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="label" data-en="Total Capacity">Capacité totale</span>
-                    <div class="value">1,420</div>
-                    <div class="sub-text" data-en="Across 18 Providers">Sur 18 fournisseurs</div>
-                </div>
-                <div class="stat-card highlight">
-                    <span class="label" data-en="Available Beds (Live)">Lits disponibles (En direct)</span>
-                    <div class="value positive">15</div>
-                    <div class="sub-text" data-en="Ready for Intake">Prêts pour admission</div>
-                </div>
-                <div class="stat-card">
-                    <span class="label" data-en="Occupancy Rate">Taux d'occupation</span>
-                    <div class="value">98.9%</div>
-                    <div class="sub-text" data-en="+1.2% since yesterday">+1.2% depuis hier</div>
-                </div>
-                <div class="stat-card">
-                    <span class="label" data-en="Pending Intakes">Admissions en attente</span>
-                    <div class="value warning">4</div>
-                    <div class="sub-text" data-en="Awaiting Approval">En attente d'approbation</div>
-                </div>
-            </div>
+        <p class="tagline"
+            data-fr="Une plateforme de disponibilité en temps réel pour optimiser le réseau d'hébergement de Montréal et mettre fin à la « vacance cachée »."
+            data-en="A real-time availability platform to optimize Montreal's shelter network and end 'hidden vacancy'.">
+            Une plateforme de disponibilité en temps réel pour optimiser le réseau d'hébergement de Montréal et mettre
+            fin à la « vacance cachée ».
+        </p>
 
-            <div class="dashboard-split">
-                <!-- Map Section -->
-                <div class="map-section">
-                    <div class="map-header">
-                        <h3 data-en="Network Coverage">Couverture du réseau</h3>
-                        <button class="filter-btn" data-en="Filter by Sector">Filtrer par secteur</button>
-                    </div>
-                    <div class="map-placeholder">
-                        <!-- Mock Pins -->
-                        <div class="pin" style="top: 30%; left: 40%;" title="Mission Old Brewery (3 Lits)">MOB</div>
-                        <div class="pin" style="top: 50%; left: 60%;" title="Accueil Bonneau (0 Lit)">AB</div>
-                        <div class="pin" style="top: 25%; left: 55%;" title="Maison du Père (Complet)">MdP</div>
-                        <div class="pin" style="top: 60%; left: 35%;" title="Mission Bon Accueil (12 Lits)">MBA</div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Montreal_locator_map.svg/1200px-Montreal_locator_map.svg.png"
-                            alt="Carte de Montréal"
-                            style="opacity: 0.2; width: 100%; height: 100%; object-fit: cover; position: absolute; top:0; left:0; z-index: 0;">
-                    </div>
-                </div>
+        <div class="action-grid">
+            <a href="dashboard.html" class="action-card">
+                <div class="card-icon">📱</div>
+                <div class="card-title" data-fr="Tableau de Bord" data-en="Live Dashboard">Tableau de Bord</div>
+                <div class="card-desc" data-fr="Voir le prototype interactif" data-en="View interactive prototype">Voir
+                    le prototype interactif</div>
+            </a>
 
-                <!-- Activity Feed -->
-                <div class="feed-section">
-                    <h3 data-en="Live Activity Feed">Flux d'activité en direct</h3>
-                    <div class="feed-list">
-                        <div class="feed-item">
-                            <div class="time">10:42</div>
-                            <div class="content">
-                                <strong>Mission Old Brewery</strong> <span data-en="released">a libéré</span> <span
-                                    class="badge" data-en="1 Bed">1 Lit</span>
-                                <div class="meta" data-en="Sector: Emergency • Male">Secteur : Urgence • Homme</div>
-                            </div>
-                        </div>
-                        <div class="feed-item">
-                            <div class="time">10:38</div>
-                            <div class="content">
-                                <strong data-en="Mobile Team 4">Équipe Mobile 4</strong> <span data-en="reserved">a
-                                    réservé</span> <span class="badge claimed" data-en="1 Bed">1 Lit</span>
-                                <div class="meta" data-en="Location: Downtown • Client ID: #9921">Lieu : Centre-ville •
-                                    Client ID: #9921</div>
-                            </div>
-                        </div>
-                        <div class="feed-item">
-                            <div class="time">10:15</div>
-                            <div class="content">
-                                <strong>Mission Bon Accueil</strong> <span data-en="updated capacity">a mis à jour la
-                                    capacité.</span>
-                                <div class="meta" data-en="System Sync (HIFIS)">Sync Système (HIFIS)</div>
-                            </div>
-                        </div>
-                        <div class="feed-item">
-                            <div class="time">09:55</div>
-                            <div class="content">
-                                <strong data-en="Alert:">Alerte :</strong> <span
-                                    data-en="Extreme Cold Warning Active.">Avertissement de froid extrême actif.</span>
-                                <div class="meta" data-en="Protocol: Level 2">Protocole : Niveau 2</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+            <a href="concept_note_print_fr.html" class="action-card" id="note-link">
+                <div class="card-icon">📄</div>
+                <div class="card-title" data-fr="Note Conceptuelle" data-en="Concept Note">Note Conceptuelle</div>
+                <div class="card-desc" data-fr="Télécharger le PDF (FR)" data-en="Download PDF (EN)">Télécharger le PDF
+                    (FR)</div>
+            </a>
+
+            <a href="mailto:vayne@vayneconsulting.com" class="action-card">
+                <div class="card-icon">🤝</div>
+                <div class="card-title" data-fr="Partenariat" data-en="Partnership">Partenariat</div>
+                <div class="card-desc" data-fr="Contacter Vayne Consulting" data-en="Contact Vayne Consulting">Contacter
+                    Vayne Consulting</div>
+            </a>
+        </div>
     </div>
 
     <script>
-        let isEnglish = false;
+        function setLang(lang) {
+            const frStart = document.querySelectorAll('[data-fr]');
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            const noteLink = document.getElementById('note-link');
 
-        function toggleLanguage() {
-            const elements = document.querySelectorAll('[data-en]');
-            const btnLabel = document.getElementById('langLabel');
-
-            isEnglish = !isEnglish;
-
-            if (isEnglish) {
-                // Switch to English
-                btnLabel.innerText = "Français";
+            if (lang === 'en') {
+                frStart.forEach(el => el.innerText = el.getAttribute('data-en'));
+                btnFr.classList.remove('active');
+                btnEn.classList.add('active');
+                noteLink.href = "concept_note_print_en.html";
                 document.documentElement.lang = "en";
-                elements.forEach(el => {
-                    if (!el.dataset.fr) {
-                        el.dataset.fr = el.innerText; // Save original French
-                    }
-                    el.innerText = el.dataset.en;
-                });
             } else {
-                // Switch back to French
-                btnLabel.innerText = "English";
+                frStart.forEach(el => el.innerText = el.getAttribute('data-fr'));
+                btnEn.classList.remove('active');
+                btnFr.classList.add('active');
+                noteLink.href = "concept_note_print_fr.html";
                 document.documentElement.lang = "fr";
-                elements.forEach(el => {
-                    if (el.dataset.fr) {
-                        el.innerText = el.dataset.fr;
-                    }
-                });
             }
         }
     </script>
