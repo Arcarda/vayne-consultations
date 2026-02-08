@@ -73,12 +73,13 @@ html {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 2rem 5%;
+    padding: 1.5rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    mix-blend-mode: difference;
+    background-color: var(--bg-black);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .logo {
