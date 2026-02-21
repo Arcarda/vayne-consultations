@@ -1,15 +1,57 @@
-# System Files
+# ══════════════════════════════════════════════════════════════
+# VAYNE CONSULTING — .gitignore
+# This repo syncs ONLY the public website to the live service.
+# Everything else stays local.
+# ══════════════════════════════════════════════════════════════
+
+# ── INTERNAL TOOLS (never push to production) ────────────────
+smart_scout/
+tools/
+
+# ── SENSITIVE BUSINESS DOCUMENTS ─────────────────────────────
+liquidity_acceleration_plan.md
+client_acquisition_strategy.md
+FollowUp_Emails_Draft.md
+CONSULTANT_DEPLOYMENT_PLAN.md
+deployment_guide.md
+
+# ── INTERNAL WORKING FOLDERS ─────────────────────────────────
+docs/
+sales_assets/
+content/
+synchro/
+
+# ── ORPHAN / EDITOR FILES ────────────────────────────────────
+index.html.bak
+*.bak
+vayne_consulting.code-workspace
+*.code-workspace
+
+# ── PYTHON ───────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.env
+.venv/
+venv/
+env/
+
+# ── SYSTEM / EDITOR ──────────────────────────────────────────
+.DS_Store
 Thumbs.db
 Desktop.ini
-.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# Logs
+# ── LOGS / RUNTIME ───────────────────────────────────────────
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Editor directories
-.vscode/
-.idea/
-*.swp
+reports/
+targets/
