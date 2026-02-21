@@ -1,0 +1,67 @@
+name: "Interior Design Studios"
+slug: "interior_design"
+
+search_keywords:
+  - "interior design studio"
+  - "interior decorator"
+  - "home staging company"
+  - "luxury interior designer"
+  - "residential interior design"
+
+locations:
+  - "Montreal"
+  - "Toronto"
+  - "Vancouver"
+  - "Calgary"
+  - "Ottawa"
+
+pain_points:
+  - "Portfolio is buried in a PDF or unavailable online — critical for a visual business"
+  - "No clear service packages or pricing transparency — creates friction for premium clients"
+  - "Slow image-heavy sites with no lazy loading — the irony of beautiful designs loading ugly"
+  - "Social media is the main 'website' — Instagram links as the only portfolio"
+  - "No lead capture mechanism — no inquiry form, no email opt-in"
+  - "Copy focuses on aesthetics, not ROI (increased property value, rental premium)"
+
+kpis:
+  - "Portfolio view-to-inquiry conversion rate"
+  - "Project request form submissions"
+  - "Newsletter/lookbook opt-in rate"
+  - "Average time on portfolio page"
+
+trust_signals:
+  - "Before/after project galleries with room names and client context"
+  - "Press features (Architectural Digest, Dezeen, local publications)"
+  - "Named awards or design competition recognition"
+  - "Client video testimonials"
+  - "Project budget range (signals who the target client is)"
+
+offer_angle: >
+  An interior designer's website is their most visible work. A site that loads
+  slowly or buries the portfolio communicates the opposite of what their brand
+  promises. Vayne Consulting creates digital spaces as curated as the physical
+  ones they design.
+
+analysis_focus: >
+  Portfolio accessibility, image performance, lead capture mechanisms, and
+  service clarity. Flag any studio relying solely on Instagram or PDF portfolios.
+
+outreach_angle: >
+  Your work speaks for itself — your website should too. Right now, the gap
+  between the quality of your projects and the quality of your digital presence
+  may be costing you premium clients.
+
+priority_indicators:
+  high:
+    - "No online portfolio (PDF only or none)"
+    - "Instagram is listed as the main website"
+    - "Load time > 5s (common with unoptimized image galleries)"
+    - "No contact/inquiry form"
+  medium:
+    - "No service description or package overview"
+    - "No press or publication mentions"
+    - "Portfolio not filterable by room type or style"
+  low:
+    - "No alt text on portfolio images (accessibility)"
+    - "Missing meta description"
+    - "No social proof above the fold"

@@ -1,0 +1,68 @@
+name: "CPA Accounting Firms"
+slug: "accounting"
+
+search_keywords:
+  - "CPA accounting firm"
+  - "chartered professional accountant"
+  - "bookkeeping service"
+  - "tax accountant"
+  - "small business accounting"
+
+locations:
+  - "Montreal"
+  - "Toronto"
+  - "Calgary"
+  - "Ottawa"
+  - "Vancouver"
+
+pain_points:
+  - "Sites built in 2010s with no responsiveness or modern UX"
+  - "No online portal or document upload — clients still fax or drop off paper"
+  - "Generic positioning: impossible to tell one CPA firm from another"
+  - "No niche or specialty communicated — missing high-value verticals (real estate, crypto, incorporation)"
+  - "Missing trust signals for high-stakes financial relationships"
+  - "No bilingual content in Quebec despite Bill 96 requirements"
+
+kpis:
+  - "Consultation booking rate (free initial consult)"
+  - "Online document submission rate"
+  - "Niche/specialty page traffic"
+  - "Referral conversion rate"
+
+trust_signals:
+  - "CPA Canada and CPA provincial body membership logos"
+  - "Named partners with credentials (CPA, CA, CGA)"
+  - "Years in business prominently displayed"
+  - "Client industry specializations clearly listed"
+  - "Secure client portal availability"
+
+offer_angle: >
+  Accounting is built on trust. A firm's website that looks outdated signals
+  that their processes might be too. Vayne Consulting modernizes CPA firm
+  digital presence to match the precision their clients expect from the numbers.
+
+analysis_focus: >
+  Trust signal density, specialty/niche communication, contact friction,
+  bilingual coverage (Quebec), and technical infrastructure signals
+  (SSL, secure portal mentions).
+
+outreach_angle: >
+  Your clients trust you with their most sensitive data — does your website
+  communicate that level of care? A modern, secure-looking web presence
+  is one of the lowest-cost trust signals a firm can deploy.
+
+priority_indicators:
+  high:
+    - "No SSL certificate"
+    - "No named partners or credentials visible"
+    - "Load time > 4s"
+    - "No contact form (phone/email only)"
+    - "No French content (Quebec)"
+  medium:
+    - "No industry specializations listed"
+    - "No mention of client portal or digital document submission"
+    - "Generic tagline with no differentiation"
+  low:
+    - "No Google Business Profile link"
+    - "No CPA association badge/logo"
+    - "No blog or resource section"

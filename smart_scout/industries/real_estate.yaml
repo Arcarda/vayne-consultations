@@ -1,0 +1,68 @@
+name: "Real Estate Agents & Boutique Brokerages"
+slug: "real_estate"
+
+search_keywords:
+  - "real estate agent"
+  - "boutique real estate brokerage"
+  - "luxury realtor"
+  - "commercial real estate broker"
+  - "real estate team"
+
+locations:
+  - "Montreal"
+  - "Toronto"
+  - "Vancouver"
+  - "Calgary"
+  - "Ottawa"
+
+pain_points:
+  - "Generic franchise template sites — impossible to differentiate from 1,000 identical agents"
+  - "No neighborhood or micro-market expertise communicated"
+  - "Listings buried or linked externally (Centris/MLS only) — no brand-controlled portfolio"
+  - "No content strategy — no blog, no market reports, no lead magnet"
+  - "Weak hero: headshot only, no value proposition or specialist positioning"
+  - "No lead capture beyond a generic contact form"
+
+kpis:
+  - "Buyer/seller lead capture rate"
+  - "Email list signup rate (for market updates)"
+  - "Listing inquiry click-through rate"
+  - "Neighborhood page engagement"
+
+trust_signals:
+  - "Transaction volume / sales stats ('$X million sold')"
+  - "Area/neighborhood specialist positioning"
+  - "Client video testimonials"
+  - "Press features or award badges (e.g., RE/MAX top producer)"
+  - "Market report downloads as lead magnets"
+
+offer_angle: >
+  In real estate, perception is everything. A generic template website
+  positions a high-performing agent the same as a newcomer. Vayne Consulting
+  builds branded presences that communicate expertise before the first call —
+  turning passive browsers into qualified leads.
+
+analysis_focus: >
+  Brand differentiation vs. template sites, lead capture mechanisms,
+  neighborhood positioning, and transaction social proof. Flag any agent
+  using a corporate franchise template with no personal brand layer.
+
+outreach_angle: >
+  Every other agent in your market is using the same template. The ones
+  winning the listing appointments are the ones whose digital presence
+  communicates 'specialist', not 'generalist'.
+
+priority_indicators:
+  high:
+    - "Franchise template with no personalization"
+    - "No email capture / lead magnet"
+    - "No transaction stats or social proof"
+    - "Load time > 4s"
+  medium:
+    - "No neighborhood or specialty pages"
+    - "Only external listings (no on-site portfolio)"
+    - "Agent bio is 2 sentences or less"
+  low:
+    - "No blog or market update content"
+    - "Missing meta description"
+    - "No video introduction"

@@ -3,3 +3,5 @@ beautifulsoup4
 openai
 python-dotenv
 colorama
+pyyaml
+lxml
