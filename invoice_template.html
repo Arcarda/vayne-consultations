@@ -689,12 +689,12 @@
                 <div class="control-group">
                     <h3 class="control-title">Branding Assets</h3>
                     <div class="input-wrap">
-                        <label>Company Name</label>
-                        <input type="text" id="b_name" value="VAYNE VENTURES">
+                        <label for="b_name">Company Name</label>
+                        <input type="text" id="b_name" value="VAYNE VENTURES" title="Company Name">
                     </div>
                     <div class="input-wrap">
-                        <label>Tagline</label>
-                        <input type="text" id="b_tagline" value="Strategic Growth & Global Solutions">
+                        <label for="b_tagline">Tagline</label>
+                        <input type="text" id="b_tagline" value="Strategic Growth & Global Solutions" title="Tagline">
                     </div>
                     <div class="input-wrap">
                         <label>Brand Logo</label>
@@ -716,8 +716,8 @@
                         <div class="input-wrap">
                             <label for="i_currency">Currency</label>
                             <select id="i_currency" onchange="changeCurrency(this.value)" title="Select Currency">
-                                <option value="USD" selected>USD - US Dollar</option>
-                                <option value="CAD">CAD - Canadian Dollar</option>
+                                <option value="CAD" selected>CAD - Canadian Dollar</option>
+                                <option value="USD">USD - US Dollar</option>
                                 <option value="EUR">EUR - Euro</option>
                                 <option value="GBP">GBP - British Pound</option>
                                 <option value="AUD">AUD - Australian Dollar</option>
@@ -806,9 +806,9 @@
                         <textarea id="i_terms"></textarea>
                     </div>
                     <div class="input-wrap">
-                        <label>Legal Disclaimer</label>
-                        <textarea
-                            id="i_legal">This invoice is issued by Vayne Ventures. Late payments may be subject to a 2% monthly interest fee.</textarea>
+                        <label for="i_legal">Legal Disclaimer</label>
+                        <textarea id="i_legal"
+                            title="Legal Disclaimer">This invoice is issued by Vayne Consulting. Payment is due upon receipt unless otherwise specified. Late payments are subject to a 2% monthly interest fee. All services provided are governed by the laws of the Province of Quebec, Canada.</textarea>
                     </div>
                     <div class="input-wrap">
                         <label>Digital Signature</label>
@@ -940,11 +940,14 @@
 
         // --- Database & State Management ---
         let invoiceData = {
-            baseCurrency: 'USD',
-            currency: 'USD',
+            baseCurrency: 'CAD',
+            currency: 'CAD',
             rateFactor: 1,
             items: [],
-            taxes: [{ id: '1', label: 'GST', rate: 5 }],
+            taxes: [
+                { id: '1', label: 'GST', rate: 5 },
+                { id: '2', label: 'QST', rate: 9.975 }
+            ],
             branding: { logo: null, sig: null },
             watermark: 'none'
         };
