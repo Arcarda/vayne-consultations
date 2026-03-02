@@ -659,8 +659,12 @@
                         <input type="text" id="c_addr1" value="">
                     </div>
                     <div class="input-wrap">
-                        <label>Address Line 2 (City, State ZIP)</label>
-                        <input type="text" id="c_addr2" value="">
+                        <label for="c_addr2">Address Line 2 (City, State ZIP)</label>
+                        <input type="text" id="c_addr2" value="" title="Address Line 2">
+                    </div>
+                    <div class="input-wrap">
+                        <label for="c_email">Client Email Address</label>
+                        <input type="email" id="c_email" value="" title="Client Email">
                     </div>
                 </div>
 
@@ -735,7 +739,8 @@
                                 <strong id="out_c_name"></strong><br>
                                 <span class="muted" id="out_c_company"></span><br>
                                 <span class="muted" id="out_c_addr1"></span><br>
-                                <span class="muted" id="out_c_addr2"></span>
+                                <span class="muted" id="out_c_addr2"></span><br>
+                                <span class="muted" id="out_c_email"></span>
                             </p>
                         </div>
                         <div class="info-block" style="text-align: right;">
@@ -881,6 +886,7 @@
                 c_company: document.getElementById('c_company'),
                 c_addr1: document.getElementById('c_addr1'),
                 c_addr2: document.getElementById('c_addr2'),
+                c_email: document.getElementById('c_email'),
                 terms: document.getElementById('i_terms'),
                 legal: document.getElementById('i_legal'),
                 b_name: document.getElementById('b_name'),
@@ -894,6 +900,7 @@
                 c_company: document.getElementById('out_c_company'),
                 c_addr1: document.getElementById('out_c_addr1'),
                 c_addr2: document.getElementById('out_c_addr2'),
+                c_email: document.getElementById('out_c_email'),
                 subtotal: document.getElementById('out_subtotal'),
                 taxesList: document.getElementById('out_taxes_list'),
                 total: document.getElementById('out_total'),
@@ -918,7 +925,7 @@
         };
 
         // Bind simple text fields
-        ['number', 'date', 'due', 'c_name', 'c_company', 'c_addr1', 'c_addr2', 'terms', 'legal', 'b_name', 'b_tagline'].forEach(key => {
+        ['number', 'date', 'due', 'c_name', 'c_company', 'c_addr1', 'c_addr2', 'c_email', 'terms', 'legal', 'b_name', 'b_tagline'].forEach(key => {
             bindInputToOutput(key, key);
         });
 
