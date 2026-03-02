@@ -4,199 +4,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vayne Consulting | Brand Architecture & Deployment Strategies</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Vayne Consulting | Strategic Growth & Global Solutions</title>
+    <meta name="description"
+        content="Vayne Consulting provides premium strategic growth, branding, and global solutions for elite businesses. Authorized consulting in Quebec, Canada.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Syncopate:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <meta name="description"
-        content="Vayne Consulting: High-Stakes Brand Architecture, Deployment Strategies, and Strategic Advising.">
-    <link rel="alternate" hreflang="en" href="index.html">
-    <link rel="alternate" hreflang="fr" href="index-fr.html">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Specific page animations */
+        @keyframes reveal {
+            from {
+                clip-path: inset(0 0 100% 0);
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                clip-path: inset(0 0 0 0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .reveal-text {
+            animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Smooth reveal on scroll */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">VAYNE CONSULTING</div>
-        <div class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">VAYNE<span style="color:var(--text-white)">CONSULTING</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">Philosophy</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="invoice_template.html" class="portal-btn"><i data-lucide="lock"
+                            style="width:12px; vertical-align:middle; margin-right:5px"></i>Client Portal</a></li>
+            </ul>
         </div>
-        <ul class="nav-links">
-            <li><a href="#branding">Consultation</a></li>
-            <li><a href="#rebranding">(Re-)Branding</a></li>
-            <li><a href="#deployment">Deployment</a></li>
-            <li><a href="#evolution">Evolution</a></li>
-            <!-- <li><a href="#references">References</a></li> -->
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact" class="cta-btn">Contact</a></li>
-            <li class="lang-switch"><span class="current-lang">EN</span> | <a href="index-fr.html"
-                    title="Français">FR</a></li>
-        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1 class="glitch" data-text="VAYNE">VAYNE</h1>
-            <p class="subtitle">Consultation | (Re-)Branding | Deployment | Evolution</p>
-            <p class="tagline">Strategic Architecture. Precision Execution. Market Authority.</p>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-video-bg">
+            <img src="assets/images/hero_background_1769134285769.png" alt="Atmospheric background" class="hero-image">
         </div>
-        <div class="scroll-indicator">
-            <span>Explore</span>
-            <div class="line"></div>
-        </div>
-    </header>
 
+        <div class="container">
+            <div class="hero-content">
+                <span class="section-label reveal-text"
+                    style="color:var(--text-white); opacity:0.5; margin-bottom: 2rem;">Montreal // Global</span>
+                <h1 class="reveal-text delay-1">ARCHITECTS<br>OF<span class="glitch-span">EVOLUTION</span></h1>
+                <p class="reveal-text delay-2">Vayne Consulting bridges the gap between ambitious vision and global
+                    execution through high-fidelity strategy and premium branding.</p>
 
-
-    <section id="branding" class="vertical-section reverse">
-        <div class="bg-image bg-branding">
-        </div>
-        <div class="blur-card">
-            <h2>Strategic Consultation</h2>
-            <div class="divider"></div>
-            <p>High-stakes brand architecture and operational strategy. We audit the present to architect a legacy that
-                resonates through culture and technology.</p>
-            <a href="#contact" class="explore-btn">Request Consultation</a>
-        </div>
-    </section>
-
-    <!-- Re-branding Section -->
-    <section id="rebranding" class="vertical-section">
-        <div class="bg-image bg-rebranding">
-        </div>
-        <div class="blur-card">
-            <h2>Strategic (Re-)Branding</h2>
-            <div class="divider"></div>
-            <p>Institutional evolution and narrative rescue. We reposition established entities to regain market
-                authority and cultural relevance.</p>
-            <a href="#contact" class="explore-btn">Evolve Your Brand</a>
-        </div>
-    </section>
-
-    <!-- Deployment Strategies Section -->
-    <section id="deployment" class="vertical-section">
-        <div class="bg-image bg-deployment">
-        </div>
-        <div class="blur-card">
-            <h2>Deployment Strategies</h2>
-            <div class="divider"></div>
-            <p>From blueprint to reality. We manage the high-fidelity execution of brand systems, secure
-                infrastructures, and market-ready ventures.</p>
-            <a href="#contact" class="explore-btn">Execute Your Vision</a>
-        </div>
-    </section>
-
-    <!-- Growth & Maintenance Section -->
-    <section id="evolution" class="vertical-section reverse">
-        <div class="bg-image bg-growth">
-        </div>
-        <div class="blur-card">
-            <h2>Growth & Maintenance</h2>
-            <div class="divider"></div>
-            <p>Sustaining market authority through operational continuity and strategic optimization. We provide the
-                ongoing maintenance required for long-term scalability and narrative resilience.</p>
-            <a href="#contact" class="explore-btn">Scale Your Legacy</a>
-        </div>
-    </section>
-
-    <!-- Project References Section -->
-    <!-- 
-    <section id="references" class="framework-section section-dark">
-        <h2>Completed and Current References</h2>
-        <div class="divider"></div>
-        <div class="framework-grid">
-            <div class="framework-step placeholder-step">
-                <span class="step-number">FILE // 001</span>
-                <h3>Strategic Market Entry</h3>
-                <p>High-stakes corporate advisory for market expansion and competitive positioning.</p>
-            </div>
-            <div class="framework-step placeholder-step">
-                <span class="step-number">FILE // 002</span>
-                <h3>Operational Scale-up</h3>
-                <p>Strategic deployment of systems and infrastructure for high-growth ventures.</p>
-            </div>
-            <div class="framework-step placeholder-step">
-                <span class="step-number">FILE // 003</span>
-                <h3>Brand Institutionalization</h3>
-                <p>Architecting brand narratives for long-term relevance and market authority.</p>
-            </div>
-        </div>
-        <p class="reference-note">Detailed case studies available upon validated request.</p>
-    </section>
-    -->
-
-    <!-- About Section -->
-    <section id="about" class="vertical-section reverse">
-        <div class="bg-image bg-about">
-        </div>
-        <div class="blur-card">
-            <h2>The Proprietor</h2>
-            <div class="divider"></div>
-            <p>Strategic mastery accepts no boundaries. Vayne Consulting bridges the divide between corporate strategy,
-                high-culture, and systemic security, proving that true innovation happens at the intersection of
-                disciplines.</p>
-            <a href="#contact" class="explore-btn">Request Audience</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <h3>Ready to Elevate?</h3>
-            <p>Contact Vayne, Owner & Proprietor</p>
-            <div class="footer-links">
-                <a href="https://redbookmanual.com" class="footer-link">The Red Book</a>
-            </div>
-            <p class="consultation-note">Initial Consulting is Complimentary (Subject to Review and Scope)</p>
-            <form class="contact-form" action="https://formspree.io/f/xbdaaewp" method="POST">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@company.com" required>
-                    </div>
+                <div class="hero-actions reveal-text delay-3">
+                    <a href="#contact" class="btn btn-primary">Start Consultation <i data-lucide="arrow-right"></i></a>
+                    <a href="#services" class="btn btn-outline">Explore Strategy</a>
                 </div>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="org">Organization</label>
-                        <input type="text" id="org" name="organization" placeholder="Enterprise / Agency Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Nature of Inquiry</label>
-                        <select id="subject" name="subject" required>
-                            <option value="" disabled selected>Select an option</option>
-                            <option value="consultation">Strategic Consultation</option>
-                            <option value="rebranding">(Re-)Branding Package</option>
-                            <option value="deployment">Deployment Strategies</option>
-                            <option value="evolution">Growth & Maintenance</option>
-                            <option value="other">Other / General Inquiry</option>
-                        </select>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section section-dark" id="services">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-label">Core Capabilities</span>
+                <h2 class="section-title">A Unified Framework for<br>Scalable Growth</h2>
+            </div>
+
+            <div class="service-grid">
+                <!-- Consultation -->
+                <div class="service-card glass scroll-reveal">
+                    <div class="service-icon"><i data-lucide="message-square"></i></div>
+                    <h3>01 // Core Consultation</h3>
+                    <p>Deep-dive analysis of your current market position. We identify friction points in your scaling
+                        model and architect a roadmap for frictionless expansion.</p>
+                </div>
+
+                <!-- Branded Strategies -->
+                <div class="service-card glass scroll-reveal">
+                    <div class="service-icon"><i data-lucide="layers"></i></div>
+                    <h3>02 // Branded Strategies</h3>
+                    <p>Identity is currency. We develop high-end brand assets and narrative positioning that resonate
+                        with global audiences and elite stakeholders.</p>
+                </div>
+
+                <!-- Deployment -->
+                <div class="service-card glass scroll-reveal">
+                    <div class="service-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>03 // Strategic Deployment</h3>
+                    <p>Precision execution of identified goals. From operational restructuring to market entry, we
+                        manage the complexities of global integration.</p>
+                </div>
+
+                <!-- Evolution -->
+                <div class="service-card glass scroll-reveal">
+                    <div class="service-icon"><i data-lucide="trending-up"></i></div>
+                    <h3>04 // Continuous Evolution</h3>
+                    <p>Success is not a static state. We provide ongoing advisory and data-driven adjustments to ensure
+                        your business remains at the peak of its industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY / ABOUT -->
+    <section class="section" id="about" style="min-height:70vh; display:flex; align-items:center;">
+        <div class="container" style="display:grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items:center;">
+            <div class="scroll-reveal">
+                <span class="section-label">The Vayne Philosophy</span>
+                <h2 class="section-title">Beyond Consulting.</h2>
+                <p style="margin-top:2rem; font-size:1.1rem; line-height:1.8; color:var(--text-muted)">
+                    At Vayne, we believe that strategy without soul is just data. We work with clients who are not
+                    looking for a vendor, but an architect of their legacy.
+                    <br><br>
+                    Based in Montreal and operating globally, our team combines technical precision with a refined
+                    aesthetic sense, ensuring your business looks as powerful as it performs.
+                </p>
+            </div>
+            <div class="scroll-reveal" style="position:relative;">
+                <img src="assets/images/about_section_bg.png" alt="Strategic Architecture" class="glass red-glow"
+                    style="width:100%; border-radius:8px; padding:0.5rem">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT AREA -->
+    <section class="contact-section" id="contact">
+        <div class="contact-info scroll-reveal">
+            <span class="section-label">Contact</span>
+            <h2 class="section-title">Ready to<br>Evolve?</h2>
+            <p style="margin-top:2rem; color:var(--text-muted); line-height:1.8">
+                Inquiries are managed with strict confidentiality. Reach out to schedule a private consultation.
+            </p>
+            <div style="margin-top:3rem; border-top: 1px solid var(--glass-border); padding-top:2rem;">
+                <p
+                    style="font-family:var(--font-heading); font-size:0.6rem; letter-spacing:2px; color:var(--primary-red)">
+                    Email</p>
+                <a href="mailto:vayne@vayneconsulting.com"
+                    style="color:var(--text-white); text-decoration:none; font-size:1.2rem">vayne@vayneconsulting.com</a>
+                <p
+                    style="font-family:var(--font-heading); font-size:0.6rem; letter-spacing:2px; color:var(--primary-red); margin-top:2rem">
+                    Location</p>
+                <p style="font-size:1.1rem">Montreal, Quebec</p>
+            </div>
+        </div>
+
+        <div class="contact-form-area scroll-reveal">
+            <form action="#" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Legal Name / Organization</label>
+                    <input type="text" id="name" placeholder="Vayne Consulting" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Detailed Brief / Message</label>
-                    <textarea id="message" name="message" rows="5"
-                        placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+                    <label for="email">Secure Email</label>
+                    <input type="email" id="email" placeholder="vayne@vayneconsulting.com" required>
                 </div>
-                <button type="submit" class="submit-btn">Initialize Engagement</button>
+                <div class="form-group">
+                    <label for="subject">Service Interest</label>
+                    <select id="subject" style="appearance: none; cursor:pointer;" title="Inquiry Type">
+                        <option value="consultation">Core Consultation</option>
+                        <option value="branding">Branded Strategy</option>
+                        <option value="deployment">Strategic Deployment</option>
+                        <option value="partnership">Global Partnership</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Consultation Brief</label>
+                    <textarea id="message" rows="5" placeholder="Outline your current challenges..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:1rem">Send Request <i
+                        data-lucide="send"></i></button>
             </form>
+        </div>
+    </section>
 
-            <p class="copyright">&copy; 2026 Vayne Consulting. All Rights Reserved.</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">VAYNE CONSULTING // 2026</div>
+            <ul class="footer-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">Philosophy</a></li>
+                <li><a href="invoice_template.html">Portal</a></li>
+            </ul>
+            <p class="copyright">© 2026 Vayne Consulting. Authorized Strategic Advisory of Quebec, Canada. All Rights
+                Reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Lucide integration
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Reveal Implementation
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
