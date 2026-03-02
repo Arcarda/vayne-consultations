@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator - Vayne Consulting</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Syncopate:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-red: #D71212;
+            --dark-red: #8B0000;
+            --bg-black: #050505;
+            --bg-panel: #0a0a0a;
+            --surface-color: #111111;
+            --text-white: #EDEDED;
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-border-focus: rgba(215, 18, 18, 0.5);
+
+            --font-heading: 'Syncopate', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* App Layout */
+        .app-layout {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Controls Panel */
+        .controls-panel {
+            width: 450px;
+            background-color: var(--bg-panel);
+            border-right: 1px solid var(--glass-border);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .controls-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 5;
+        }
+
+        .controls-header h2 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            color: var(--primary-red);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .controls-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .control-group:last-child {
+            border-bottom: none;
+        }
+
+        .control-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--text-white);
+            font-style: italic;
+        }
+
+        /* Form Inputs */
+        .input-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            color: var(--text-white);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 10px rgba(215, 18, 18, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Dynamic Items List */
+        .items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .item-editor {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .item-editor.focus-within {
+            border-color: var(--glass-border-focus);
+        }
+
+        .btn-remove {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.3s;
+            padding: 0.25rem;
+        }
+
+        .btn-remove:hover {
+            color: var(--primary-red);
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid var(--primary-red);
+            color: var(--text-white);
+            padding: 0.75rem 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-red);
+            color: var(--bg-black);
+            box-shadow: 0 0 15px rgba(215, 18, 18, 0.4);
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: var(--bg-black);
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            background: #ff1e1e;
+            box-shadow: 0 0 20px rgba(215, 18, 18, 0.6);
+        }
+
+        .btn-ghost {
+            border-color: var(--glass-border);
+            color: var(--text-muted);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--text-white);
+            color: var(--bg-black);
+            background: var(--text-white);
+            box-shadow: none;
+        }
+
+        .controls-footer {
+            padding: 2rem;
+            border-top: 1px solid var(--glass-border);
+            position: sticky;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Invoice Preview Area */
+        .preview-area {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 4rem 2rem;
+            background-color: var(--bg-black);
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(215, 18, 18, 0.03), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(215, 18, 18, 0.03), transparent 25%);
+        }
+
+        /* ------------------------------------------------ */
+        /* INVOICE TEMPLATE STYLES - Exact match to before */
+        /* ------------------------------------------------ */
+        .invoice-container {
+            background-color: var(--surface-color);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 900px;
+            padding: 4rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .invoice-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at top right, rgba(215, 18, 18, 0.05), transparent 40%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .invoice-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .brand .logo {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .brand .tagline {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .document-title {
+            text-align: right;
+        }
+
+        .document-title h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--text-white);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .document-title p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .invoice-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-block h3 {
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .info-block p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-white);
+            font-weight: 300;
+        }
+
+        .info-block .muted {
+            color: var(--text-muted);
+        }
+
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 3rem;
+        }
+
+        .invoice-table th {
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-red);
+            text-align: left;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .invoice-table td {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--glass-border);
+            font-size: 0.95rem;
+            color: var(--text-white);
+            font-weight: 300;
+            vertical-align: top;
+        }
+
+        .invoice-table th.right,
+        .invoice-table td.right {
+            text-align: right;
+        }
+
+        .invoice-table th.center,
+        .invoice-table td.center {
+            text-align: center;
+        }
+
+        .item-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 0.25rem;
+            color: var(--text-white);
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        .invoice-summary {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 4rem;
+        }
+
+        .summary-box {
+            width: 350px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            font-size: 0.95rem;
+            color: var(--text-white);
+        }
+
+        .summary-row.total {
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--primary-red);
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--primary-red);
+            letter-spacing: 1px;
+        }
+
+        .invoice-footer {
+            border-top: 1px solid var(--glass-border);
+            padding-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .payment-terms h3 {
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .payment-terms p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            font-weight: 300;
+            white-space: pre-wrap;
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .contact-info p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .contact-info a {
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+
+        /* Print Media Queries */
+        @media print {
+            body {
+                background-color: white;
+                overflow: visible;
+                height: auto;
+                display: block;
+            }
+
+            .controls-panel {
+                display: none !important;
+            }
+
+            .preview-area {
+                padding: 0;
+                background: none;
+                display: block;
+            }
+
+            .invoice-container {
+                border: none;
+                box-shadow: none;
+                max-width: 100%;
+                background-color: white;
+                padding: 20px;
+                margin: 0;
+            }
+
+            :root {
+                --primary-red: #D71212;
+                --bg-black: #ffffff;
+                --surface-color: #ffffff;
+                --text-white: #000000;
+                --text-muted: #555555;
+                --glass-border: #dddddd;
+            }
+
+            .invoice-container::before {
+                display: none;
+            }
+
+            ::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Add print page setup fixes */
+            @page {
+                size: letter;
+                margin: 0.5in;
+            }
+
+            .invoice-table {
+                page-break-inside: auto;
+            }
+
+            .invoice-table tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- GENERATOR CONTROLS -->
+        <aside class="controls-panel">
+            <div class="controls-header">
+                <h2>Invoice Generator</h2>
+            </div>
+
+            <div class="controls-content">
+
+                <!-- Branding -->
+                <div class="control-group">
+                    <h3 class="control-title">Branding</h3>
+                    <div class="input-wrap">
+                        <label>Company Name</label>
+                        <input type="text" id="b_name" value="VAYNE VENTURES">
+                    </div>
+                    <div class="input-wrap">
+                        <label>Tagline</label>
+                        <input type="text" id="b_tagline" value="Strategic Growth & Global Solutions">
+                    </div>
+                </div>
+
+                <!-- Invoice Details -->
+                <div class="control-group">
+                    <h3 class="control-title">Document Details</h3>
+                    <div class="input-row">
+                        <div class="input-wrap">
+                            <label>Invoice Number</label>
+                            <input type="text" id="i_number" value="">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-wrap">
+                            <label>Issue Date</label>
+                            <input type="text" id="i_date" value="">
+                        </div>
+                        <div class="input-wrap">
+                            <label>Due Date</label>
+                            <input type="text" id="i_due" value="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Details -->
+                <div class="control-group">
+                    <h3 class="control-title">Client Information</h3>
+                    <div class="input-wrap">
+                        <label>Client Name / Attention</label>
+                        <input type="text" id="c_name" value="">
+                    </div>
+                    <div class="input-wrap">
+                        <label>Company Name</label>
+                        <input type="text" id="c_company" value="">
+                    </div>
+                    <div class="input-wrap">
+                        <label>Address Line 1</label>
+                        <input type="text" id="c_addr1" value="">
+                    </div>
+                    <div class="input-wrap">
+                        <label>Address Line 2 (City, State ZIP)</label>
+                        <input type="text" id="c_addr2" value="">
+                    </div>
+                </div>
+
+                <!-- Services List -->
+                <div class="control-group">
+                    <h3 class="control-title">Services & Items</h3>
+                    <div class="items-list" id="items-container">
+                        <!-- Items rendered here by JS -->
+                    </div>
+                    <button class="btn btn-ghost" id="btn-add-item" style="margin-top: 1rem;">
+                        <i data-lucide="plus"></i> Add Line Item
+                    </button>
+
+                    <div id="taxes-container">
+                        <!-- Taxes rendered here by JS -->
+                    </div>
+                    <button class="btn btn-ghost" id="btn-add-tax"
+                        style="margin-top: 0.5rem; font-size: 0.65rem; padding: 0.5rem;">
+                        <i data-lucide="plus"></i> Add Tax Field
+                    </button>
+                </div>
+
+                <!-- Payment Details -->
+                <div class="control-group">
+                    <h3 class="control-title">Payment Terms</h3>
+                    <div class="input-wrap">
+                        <label>Instructions & Details</label>
+                        <textarea id="i_terms"></textarea>
+                    </div>
+                    <div class="input-wrap">
+                        <label>Legal Disclaimer</label>
+                        <textarea
+                            id="i_legal">This invoice is issued by Vayne Ventures. Payment is due within the specified timeframe. Late payments may be subject to a 2% monthly interest fee. All services provided are subject to our standard Terms of Service.</textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="controls-footer">
+                <button class="btn btn-primary" id="btn-print" style="width: 100%;">
+                    <i data-lucide="printer"></i> Print / Save as PDF
+                </button>
+                <button class="btn btn-ghost" onclick="signOut()"
+                    style="width: 100%; border-color: rgba(255, 255, 255, 0.1); font-size: 0.65rem;">
+                    <i data-lucide="log-out"></i> Sign Out Portal
+                </button>
+            </div>
+        </aside>
+
+        <!-- LIVE PREVIEW -->
+        <main class="preview-area">
+            <div class="invoice-container" id="invoice-doc">
+                <div class="invoice-content">
+
+                    <!-- Header -->
+                    <header class="invoice-header">
+                        <div class="brand">
+                            <div class="logo" id="out_b_name">VAYNE VENTURES</div>
+                            <div class="tagline" id="out_b_tagline">Strategic Growth & Global Solutions</div>
+                        </div>
+                        <div class="document-title">
+                            <h1>Invoice</h1>
+                            <p id="out_number"></p>
+                        </div>
+                    </header>
+
+                    <!-- Info blocks -->
+                    <section class="invoice-info">
+                        <div class="info-block">
+                            <h3>Billed To</h3>
+                            <p>
+                                <strong id="out_c_name"></strong><br>
+                                <span class="muted" id="out_c_company"></span><br>
+                                <span class="muted" id="out_c_addr1"></span><br>
+                                <span class="muted" id="out_c_addr2"></span>
+                            </p>
+                        </div>
+                        <div class="info-block" style="text-align: right;">
+                            <h3>Invoice Details</h3>
+                            <p>
+                                <span class="muted">Issue Date:</span> <strong style="color: var(--text-white);"
+                                    id="out_date"></strong><br>
+                                <span class="muted">Due Date:</span> <strong style="color: var(--text-white);"
+                                    id="out_due"></strong><br>
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Services Table -->
+                    <table class="invoice-table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th class="center" style="width: 15%;">Hours / Qty</th>
+                                <th class="right" style="width: 20%;">Rate</th>
+                                <th class="right" style="width: 20%;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="out_items_list">
+                            <!-- Items populated by JS -->
+                        </tbody>
+                    </table>
+
+                    <!-- Summary -->
+                    <section class="invoice-summary">
+                        <div class="summary-box">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="out_subtotal">$0.00</span>
+                            </div>
+                            <div id="out_taxes_list">
+                                <!-- Taxes populated by JS -->
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total Due</span>
+                                <span id="out_total">$0.00</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Footer -->
+                    <footer class="invoice-footer">
+                        <div class="payment-terms">
+                            <h3>Payment Terms & Instructions</h3>
+                            <p id="out_terms"></p>
+                        </div>
+                        <div class="contact-info">
+                            <p>
+                                Thank you for your business.<br>
+                                Questions? <a href="mailto:vayne@vayneconsulting.com">vayne@vayneconsulting.com</a><br>
+                                <a href="https://vayneconsulting.com" target="_blank">vayneconsulting.com</a>
+                            </p>
+                        </div>
+                    </footer>
+
+                    <div class="legal-disclaimer" id="out_legal"
+                        style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px dashed var(--glass-border); font-size: 0.7rem; color: var(--text-muted); line-height: 1.5; font-style: italic;">
+                        This invoice is issued by Vayne Ventures. Payment is due within the specified timeframe. Late
+                        payments may be subject to a 2% monthly interest fee. All services provided are subject to our
+                        standard Terms of Service.
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Generator Script -->
+    <script>
+        // Security Gate
+        if (sessionStorage.getItem('vayne_auth') !== 'true' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            window.location.href = 'login.html';
+        }
+
+        function signOut() {
+            sessionStorage.removeItem('vayne_auth');
+            window.location.href = 'login.html';
+        }
+
+        // Init Icons
+        lucide.createIcons();
+
+        // State Data
+        let invoiceData = {
+            items: [],
+            taxes: [
+                { id: '1', label: 'GST', rate: 5 },
+                { id: '2', label: 'PST/HST', rate: 0 }
+            ]
+        };
+
+        // Format Currency
+        const formatMoney = (amount) => {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+        };
+
+        // DOM Elements
+        const DOM = {
+            inputs: {
+                number: document.getElementById('i_number'),
+                date: document.getElementById('i_date'),
+                due: document.getElementById('i_due'),
+                c_name: document.getElementById('c_name'),
+                c_company: document.getElementById('c_company'),
+                c_addr1: document.getElementById('c_addr1'),
+                c_addr2: document.getElementById('c_addr2'),
+                terms: document.getElementById('i_terms'),
+                legal: document.getElementById('i_legal'),
+                b_name: document.getElementById('b_name'),
+                b_tagline: document.getElementById('b_tagline')
+            },
+            outputs: {
+                number: document.getElementById('out_number'),
+                date: document.getElementById('out_date'),
+                due: document.getElementById('out_due'),
+                c_name: document.getElementById('out_c_name'),
+                c_company: document.getElementById('out_c_company'),
+                c_addr1: document.getElementById('out_c_addr1'),
+                c_addr2: document.getElementById('out_c_addr2'),
+                subtotal: document.getElementById('out_subtotal'),
+                taxesList: document.getElementById('out_taxes_list'),
+                total: document.getElementById('out_total'),
+                terms: document.getElementById('out_terms'),
+                legal: document.getElementById('out_legal'),
+                b_name: document.getElementById('out_b_name'),
+                b_tagline: document.getElementById('out_b_tagline')
+            },
+            containers: {
+                itemsEditor: document.getElementById('items-container'),
+                taxesEditor: document.getElementById('taxes-container'),
+                itemsTableBody: document.getElementById('out_items_list')
+            }
+        };
+
+        // Bind simple text fields
+        ['number', 'date', 'due', 'c_name', 'c_company', 'c_addr1', 'c_addr2', 'terms', 'legal', 'b_name', 'b_tagline'].forEach(key => {
+            bindInputToOutput(key, key);
+        });
+
+        // Render tax editors
+        const renderTaxEditors = () => {
+            DOM.containers.taxesEditor.innerHTML = '';
+            invoiceData.taxes.forEach((tax) => {
+                const el = document.createElement('div');
+                el.className = 'input-row';
+                el.style.marginBottom = '0.5rem';
+                el.style.alignItems = 'flex-end';
+                el.innerHTML = `
+                    <div class="input-wrap" style="flex: 2;">
+                        <label>Tax Name</label>
+                        <input type="text" value="${tax.label}" oninput="updateTax('${tax.id}', 'label', this.value)">
+                    </div>
+                    <div class="input-wrap" style="flex: 1;">
+                        <label>Rate (%)</label>
+                        <input type="number" step="0.01" value="${tax.rate}" oninput="updateTax('${tax.id}', 'rate', this.value)">
+                    </div>
+                    <button class="btn-remove" onclick="removeTax('${tax.id}')" style="position: static; padding: 0.75rem;">
+                        <i data-lucide="x"></i>
+                    </button>
+                `;
+                DOM.containers.taxesEditor.appendChild(el);
+            });
+            lucide.createIcons();
+        };
+
+        // Render editor items
+        const renderItemEditors = () => {
+            DOM.containers.itemsEditor.innerHTML = '';
+
+            invoiceData.items.forEach((item, index) => {
+                const el = document.createElement('div');
+                el.className = 'item-editor';
+                el.innerHTML = `
+                    <button class="btn-remove" onclick="removeItem('${item.id}')" title="Remove Item">
+                        <i data-lucide="trash-2"></i>
+                    </button>
+                    <div class="input-wrap">
+                        <label>Service Title</label>
+                        <input type="text" value="${item.title}" oninput="updateItem('${item.id}', 'title', this.value)">
+                    </div>
+                    <div class="input-wrap">
+                        <label>Description</label>
+                        <textarea rows="2" oninput="updateItem('${item.id}', 'desc', this.value)">${item.desc}</textarea>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-wrap">
+                            <label>Hours / Qty</label>
+                            <input type="number" step="0.5" value="${item.qty}" oninput="updateItem('${item.id}', 'qty', this.value)">
+                        </div>
+                        <div class="input-wrap">
+                            <label>Rate ($)</label>
+                            <input type="number" step="0.01" value="${item.rate}" oninput="updateItem('${item.id}', 'rate', this.value)">
+                        </div>
+                    </div>
+                `;
+                DOM.containers.itemsEditor.appendChild(el);
+            });
+            lucide.createIcons(); // re-init icons for new buttons
+        };
+
+        // Render invoice table
+        const renderInvoiceTable = () => {
+            DOM.containers.itemsTableBody.innerHTML = '';
+
+            invoiceData.items.forEach(item => {
+                const amount = item.qty * item.rate;
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>
+                        <div class="item-title">${item.title}</div>
+                        <div class="item-desc">${item.desc}</div>
+                    </td>
+                    <td class="center">${item.qty}</td>
+                    <td class="right">${formatMoney(item.rate)}</td>
+                    <td class="right">${formatMoney(amount)}</td>
+                `;
+                DOM.containers.itemsTableBody.appendChild(tr);
+            });
+
+            calculateTotals();
+        };
+
+        // Totals Math
+        const calculateTotals = () => {
+            const subtotal = invoiceData.items.reduce((sum, item) => sum + (item.qty * item.rate), 0);
+            DOM.outputs.subtotal.innerText = formatMoney(subtotal);
+
+            // Clear and build tax summary
+            DOM.outputs.taxesList.innerHTML = '';
+            let totalTaxAmount = 0;
+
+            invoiceData.taxes.forEach(tax => {
+                const taxAmount = subtotal * (tax.rate / 100);
+                totalTaxAmount += taxAmount;
+
+                const row = document.createElement('div');
+                row.className = 'summary-row';
+                row.innerHTML = `
+                    <span class="muted">${tax.label} (${tax.rate}%)</span>
+                    <span class="muted">${formatMoney(taxAmount)}</span>
+                `;
+                DOM.outputs.taxesList.appendChild(row);
+            });
+
+            const total = subtotal + totalTaxAmount;
+            DOM.outputs.total.innerText = formatMoney(total);
+        };
+
+        // CRUD Operations for items
+        window.updateItem = (id, field, value) => {
+            const item = invoiceData.items.find(i => i.id === id);
+            if (item) {
+                if (field === 'qty' || field === 'rate') {
+                    item[field] = parseFloat(value) || 0;
+                } else {
+                    item[field] = value;
+                }
+                renderInvoiceTable(); // Update preview math and table immediately
+            }
+        };
+
+        window.removeItem = (id) => {
+            invoiceData.items = invoiceData.items.filter(i => i.id !== id);
+            renderItemEditors();
+            renderInvoiceTable();
+        };
+
+        // Tax Operations
+        window.updateTax = (id, field, value) => {
+            const tax = invoiceData.taxes.find(t => t.id === id);
+            if (tax) {
+                tax[field] = field === 'rate' ? (parseFloat(value) || 0) : value;
+                calculateTotals();
+            }
+        };
+
+        window.removeTax = (id) => {
+            invoiceData.taxes = invoiceData.taxes.filter(t => t.id !== id);
+            renderTaxEditors();
+            calculateTotals();
+        };
+
+        document.getElementById('btn-add-tax').addEventListener('click', () => {
+            invoiceData.taxes.push({ id: Date.now().toString(), label: 'New Tax', rate: 0 });
+            renderTaxEditors();
+            calculateTotals();
+        });
+
+        document.getElementById('btn-add-item').addEventListener('click', () => {
+            invoiceData.items.push({
+                id: Date.now().toString(),
+                title: 'New Service',
+                desc: 'Service description...',
+                qty: 1,
+                rate: 100
+            });
+            renderItemEditors();
+            renderInvoiceTable();
+            // Scroll to bottom of controls
+            const controls = document.querySelector('.controls-panel');
+            controls.scrollTop = controls.scrollHeight;
+        });
+
+        // Print Functionality
+        document.getElementById('btn-print').addEventListener('click', () => {
+            window.print();
+        });
+
+        // Init App
+        renderItemEditors();
+        renderTaxEditors();
+        renderInvoiceTable();
+
+    </script>
+</body>
+
+</html>
