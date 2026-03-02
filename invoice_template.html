@@ -851,6 +851,14 @@
             }
         };
 
+        // Text input synchronizer
+        const bindInputToOutput = (inputId, outputId) => {
+            if (!DOM.inputs[inputId]) return;
+            DOM.inputs[inputId].addEventListener('input', (e) => {
+                DOM.outputs[outputId].innerText = e.target.value;
+            });
+        };
+
         // Bind simple text fields
         ['number', 'date', 'due', 'c_name', 'c_company', 'c_addr1', 'c_addr2', 'terms', 'legal', 'b_name', 'b_tagline'].forEach(key => {
             bindInputToOutput(key, key);
