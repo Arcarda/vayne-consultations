@@ -1,398 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vayne Consulting | Strategic Growth & Global Solutions</title>
-    <meta name="description"
-        content="Vayne Consulting provides premium strategic growth, branding, and global solutions for elite businesses. Authorized consulting in Quebec, Canada.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- Fonts -->
+    <title>Coming Soon</title>
+    <meta name="description" content="Establishing the Sovereign Will. Coming Soon.">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Syncopate:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Shared Styles -->
-    <link rel="stylesheet" href="styles.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Specific page animations */
-        @keyframes reveal {
-            from {
-                clip-path: inset(0 0 100% 0);
-                transform: translateY(30px);
-                opacity: 0;
-            }
-
-            to {
-                clip-path: inset(0 0 0 0);
-                transform: translateY(0);
-                opacity: 1;
-            }
+        :root {
+            /* Aesthetic Palette (Crimson Covenant Inspired) */
+            --crimson: #DC143C;
+            --crimson-glow: rgba(220, 20, 60, 0.4);
+            --black: #030303;
+            --text-main: #EFEFEF;
+            --text-muted: #8A8A8A;
         }
 
-        .reveal-text {
-            animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .delay-1 {
-            animation-delay: 0.2s;
+        body {
+            background-color: var(--black);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(220, 20, 60, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(74, 0, 0, 0.15) 0%, transparent 60%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
         }
 
-        .delay-2 {
-            animation-delay: 0.4s;
+        .content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            width: 90%;
+            padding: 2rem;
+            animation: fadeIn 2s ease-out;
         }
 
-        .delay-3 {
-            animation-delay: 0.6s;
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 12vw, 6rem);
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 0 0 30px rgba(220, 20, 60, 0.3);
         }
 
-        /* Smooth reveal on scroll */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        .status {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.5em;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            opacity: 0.8;
         }
 
-        .scroll-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .tagline {
+            font-size: 1rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            font-weight: 300;
+            line-height: 2;
+            max-width: 450px;
+            margin: 0 auto;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        /* Ambient Glow animation */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 80vw;
+            height: 80vw;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, var(--crimson-glow) 0%, transparent 70%);
+            z-index: 1;
+            opacity: 0.3;
+            animation: breathe 10s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 3rem;
+            z-index: 10;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; letter-spacing: 0.1em; }
+            .status { font-size: 1.1rem; letter-spacing: 0.3em; }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- SCROLL CONTROLS -->
-    <button class="scroll-control scroll-prev" aria-label="Scroll Left"><i data-lucide="chevron-left"></i></button>
-    <button class="scroll-control scroll-next" aria-label="Scroll Right"><i data-lucide="chevron-right"></i></button>
+    <div class="content">
+        <h1>Coming Soon</h1>
+        <div class="status">Implementation in Progress</div>
+        
+        <p class="tagline">
+            Forging the Sovereign Will. <br>
+            Ex nihilo Oriri.
+        </p>
+    </div>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="logo">VAYNE<span style="color:var(--text-white)">CONSULTING</span></a>
-
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">Philosophy</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="invoice_template.html" class="portal-btn"><i data-lucide="lock"
-                            style="width:12px; vertical-align:middle; margin-right:5px"></i>Client Portal</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-video-bg">
-            <img src="assets/images/hero_background_1769134285769.png" alt="Atmospheric background" class="hero-image">
-        </div>
-
-        <div class="container">
-            <div class="hero-content">
-                <span class="section-label reveal-text"
-                    style="color:var(--text-white); opacity:0.5; margin-bottom: 2rem;">Montreal — Global</span>
-                <h1 class="reveal-text delay-1">ARCHITECTS<br>OF<span class="glitch-span">EVOLUTION</span></h1>
-                <p class="reveal-text delay-2">Vayne Consulting bridges the gap between ambitious vision and global
-                    execution through high-fidelity strategy and premium branding.</p>
-
-                <div class="hero-actions reveal-text delay-3">
-                    <a href="#contact" class="btn btn-primary">Start Consultation <i data-lucide="arrow-right"></i></a>
-                    <a href="#services" class="btn btn-outline">Explore Strategy</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section section-dark" id="services">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-label">Core Capabilities</span>
-                <h2 class="section-title">A Unified Framework for<br>Scalable Growth</h2>
-            </div>
-
-            <div class="service-grid">
-                <!-- Consultation -->
-                <div class="service-card glass scroll-reveal">
-                    <div class="service-icon"><i data-lucide="message-square"></i></div>
-                    <h3>01 — Core Consultation</h3>
-                    <p>Deep-dive analysis of your current market position. We identify friction points in your scaling
-                        model and architect a roadmap for frictionless expansion.</p>
-                </div>
-
-                <!-- Branded Strategies -->
-                <div class="service-card glass scroll-reveal">
-                    <div class="service-icon"><i data-lucide="layers"></i></div>
-                    <h3>02 — Branded Strategies</h3>
-                    <p>Identity is currency. We develop high-end brand assets and narrative positioning that resonate
-                        with global audiences and elite stakeholders.</p>
-                </div>
-
-                <!-- Deployment -->
-                <div class="service-card glass scroll-reveal">
-                    <div class="service-icon"><i data-lucide="shield-check"></i></div>
-                    <h3>03 — Strategic Deployment</h3>
-                    <p>Precision execution of identified goals. From operational restructuring to market entry, we
-                        manage the complexities of global integration.</p>
-                </div>
-
-                <!-- Evolution -->
-                <div class="service-card glass scroll-reveal">
-                    <div class="service-icon"><i data-lucide="trending-up"></i></div>
-                    <h3>04 — Continuous Evolution</h3>
-                    <p>Success is not a static state. We provide ongoing advisory and data-driven adjustments to ensure
-                        your business remains at the peak of its industry.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PHILOSOPHY / ABOUT -->
-    <section class="section" id="about" style="min-height:70vh; display:flex; align-items:center;">
-        <div class="container" style="display:grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items:center;">
-            <div class="scroll-reveal">
-                <span class="section-label">The Vayne Philosophy</span>
-                <h2 class="section-title">Beyond Consulting.</h2>
-                <p style="margin-top:2rem; font-size:1.1rem; line-height:1.8; color:var(--text-muted)">
-                    At Vayne, we believe that strategy without soul is just data. We work with clients who are not
-                    looking for a vendor, but an architect of their legacy.
-                    <br><br>
-                    Based in Montreal and operating globally, our team combines technical precision with a refined
-                    aesthetic sense, ensuring your business looks as powerful as it performs.
-                </p>
-            </div>
-            <div class="scroll-reveal" style="position:relative;">
-                <img src="assets/images/about_section_bg.png" alt="Strategic Architecture" class="glass red-glow"
-                    style="width:100%; border-radius:8px; padding:0.5rem">
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT AREA -->
-    <section class="contact-section" id="contact">
-        <div class="contact-info scroll-reveal">
-            <span class="section-label">Contact</span>
-            <h2 class="section-title">Ready to<br>Evolve?</h2>
-            <p style="margin-top:2rem; color:var(--text-muted); line-height:1.8">
-                Inquiries are managed with strict confidentiality. Reach out to schedule a private consultation.
-            </p>
-            <div style="margin-top:3rem; border-top: 1px solid var(--glass-border); padding-top:2rem;">
-                <p
-                    style="font-family:var(--font-heading); font-size:0.6rem; letter-spacing:2px; color:var(--primary-red)">
-                    Email</p>
-                <a href="mailto:vayne@vayneconsulting.com"
-                    style="color:var(--text-white); text-decoration:none; font-size:1.2rem">vayne@vayneconsulting.com</a>
-                <p
-                    style="font-family:var(--font-heading); font-size:0.6rem; letter-spacing:2px; color:var(--primary-red); margin-top:2rem">
-                    Location</p>
-                <p style="font-size:1.1rem">Montreal, Quebec</p>
-            </div>
-        </div>
-
-        <div class="contact-form-area scroll-reveal">
-            <form action="#" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Legal Name / Organization</label>
-                    <input type="text" id="name" placeholder="Vayne Consulting" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Secure Email</label>
-                    <input type="email" id="email" placeholder="vayne@vayneconsulting.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Service Interest</label>
-                    <select id="subject" style="appearance: none; cursor:pointer;" title="Inquiry Type">
-                        <option value="consultation">Core Consultation</option>
-                        <option value="branding">Branded Strategy</option>
-                        <option value="deployment">Strategic Deployment</option>
-                        <option value="partnership">Global Partnership</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Consultation Brief</label>
-                    <textarea id="message" rows="5" placeholder="Outline your current challenges..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:1rem">Send Request <i
-                        data-lucide="send"></i></button>
-            </form>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">VAYNE CONSULTING — 2026</div>
-            <ul class="footer-nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">Philosophy</a></li>
-                <li><a href="invoice_template.html">Portal</a></li>
-            </ul>
-            <p class="copyright">© 2026 Vayne Consulting. Authorized Strategic Advisory of Quebec, Canada. All Rights
-                Reserved.</p>
-        </div>
+    <footer>
+        &bull; MMXXVI &bull;
     </footer>
 
-    <script>
-        // Lucide integration
-        lucide.createIcons();
-
-        // Navbar Scroll Effect
-        const scrollContainer = document.body;
-        scrollContainer.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (scrollContainer.scrollLeft > 50 || window.scrollX > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Scroll Reveal Implementation
-        const observerOptions = {
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth',
-                    inline: 'start'
-                });
-            });
-        });
-
-        // Scroll Controls
-        const scrollPrev = document.querySelector('.scroll-prev');
-        const scrollNext = document.querySelector('.scroll-next');
-        const sections = Array.from(document.querySelectorAll('body > section, body > footer'));
-
-        function getCurrentSectionIndex() {
-            const scrollLeft = scrollContainer.scrollLeft || window.scrollX;
-            let closestIndex = 0;
-            let minDiff = Infinity;
-
-            sections.forEach((section, index) => {
-                const diff = Math.abs(section.offsetLeft - scrollLeft);
-                if (diff < minDiff) {
-                    minDiff = diff;
-                    closestIndex = index;
-                }
-            });
-            return closestIndex;
-        }
-
-        scrollPrev.addEventListener('click', () => {
-            const currentIndex = getCurrentSectionIndex();
-            if (currentIndex > 0) {
-                sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth', inline: 'start' });
-            }
-        });
-
-        scrollNext.addEventListener('click', () => {
-            const currentIndex = getCurrentSectionIndex();
-            // Allow clicking next if not at the very end
-            if (currentIndex < sections.length - 1) {
-                sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth', inline: 'start' });
-            }
-        });
-
-        // Update arrow visibility based on scroll position
-        function updateArrows() {
-            const scrollLeft = scrollContainer.scrollLeft || window.scrollX;
-            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-            if (scrollLeft <= 10) {
-                scrollPrev.style.opacity = '0.2';
-                scrollPrev.style.pointerEvents = 'none';
-            } else {
-                scrollPrev.style.opacity = ''; // revert to CSS
-                scrollPrev.style.pointerEvents = 'auto';
-            }
-
-            if (scrollLeft >= maxScroll - 10) {
-                scrollNext.style.opacity = '0.2';
-                scrollNext.style.pointerEvents = 'none';
-            } else {
-                scrollNext.style.opacity = '';
-                scrollNext.style.pointerEvents = 'auto';
-            }
-        }
-
-        scrollContainer.addEventListener('scroll', updateArrows);
-        window.addEventListener('resize', updateArrows);
-        updateArrows();
-
-        // Free-flowing horizontal scroll via vertical wheel
-        let targetScroll = 0;
-        let isAnimatingScroll = false;
-
-        // Ensure starting target matches reality
-        scrollContainer.addEventListener('scroll', () => {
-            if (!isAnimatingScroll) {
-                targetScroll = scrollContainer.scrollLeft || window.scrollX;
-            }
-        });
-
-        function smoothScrollLoop() {
-            const currentScroll = scrollContainer.scrollLeft || window.scrollX;
-            const diff = targetScroll - currentScroll;
-
-            // If we are close enough, snap to target and stop animating
-            if (Math.abs(diff) < 1) {
-                scrollContainer.scrollLeft = targetScroll;
-                isAnimatingScroll = false;
-                return;
-            }
-
-            // Lerp (Linear Interpolation) to the target for a very smooth follow
-            scrollContainer.scrollLeft = currentScroll + (diff * 0.1);
-            requestAnimationFrame(smoothScrollLoop);
-        }
-
-        window.addEventListener('wheel', (e) => {
-            if (e.deltaY !== 0) {
-                e.preventDefault();
-
-                // Initialize target scroll if not currently animating
-                if (!isAnimatingScroll) {
-                    targetScroll = scrollContainer.scrollLeft || window.scrollX;
-                }
-
-                // Accumulate delta, mapping Y strictly to X. Multiply slightly for feel.
-                targetScroll += e.deltaY;
-
-                // Clamp target between true boundaries
-                const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-                targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
-
-                if (!isAnimatingScroll) {
-                    isAnimatingScroll = true;
-                    requestAnimationFrame(smoothScrollLoop);
-                }
-            }
-        }, { passive: false });
-    </script>
 </body>
-
 </html>
+
+

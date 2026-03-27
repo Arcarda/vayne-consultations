@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORCA Studio | Artisan Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="texture-overlay"></div>
+
+    <div class="app-container">
+        <!-- Persistent Sidebar -->
+        <aside class="sidebar">
+            <div class="brand-section">
+                <h1>ORCA'S HEARTH</h1>
+                <span>Artisan Culinary Studio</span>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active" data-section="creations"><i data-lucide="layout"></i> Creations</a>
+                <a href="#" class="nav-link" data-section="compliance"><i data-lucide="file-check"></i> Compliance</a>
+                <a href="#" class="nav-link" data-section="service"><i data-lucide="truck"></i> Delivery Service</a>
+            </nav>
+
+            <div class="sidebar-footer" style="margin-top: auto;">
+                <div class="status-pill">
+                    <span></span>
+                    Kitchen Active
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <!-- Section: Creations -->
+            <div id="creations" class="content-section active">
+                <!-- Hero Spotlight -->
+                <section class="hero-feature">
+                    <img src="assets/personal/bread_final.jpg" alt="Signature Sourdough" class="hero-img">
+                    <div class="hero-overlay">
+                        <span class="hero-tag">Signature Creation</span>
+                        <h2>Heritage Sourdough Boulle</h2>
+                        <p style="color: var(--text-secondary); max-width: 600px;">Wild-fermented sourdough with a deep-char patterned crust and tender crumb. Proofed for 24 hours using heritage organic grains.</p>
+                    </div>
+                </section>
+
+                <!-- Creation Gallery -->
+                <section class="culinary-grid">
+                    <!-- Roast Chicken -->
+                    <div class="dish-card">
+                        <div class="dish-img-container">
+                            <img src="assets/personal/chicken_final.jpg" alt="Dutch Oven Roast Chicken" class="dish-img">
+                        </div>
+                        <div class="dish-info">
+                            <h3>Dutch Oven Roast Chicken</h3>
+                            <p>Whole roasted herb chicken braised in a cast-iron Dutch oven with golden potato wedges and rosemary.</p>
+                            <div class="dish-meta">
+                                <span class="metric-pill"><i data-lucide="utensils"></i> Cast Iron</span>
+                                <span class="metric-pill"><i data-lucide="flame"></i> Slow Braised</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pizza -->
+                    <div class="dish-card">
+                        <div class="dish-img-container">
+                            <img src="assets/personal/pizza_final.jpg" alt="Artisan Pizza" class="dish-img">
+                        </div>
+                        <div class="dish-info">
+                            <h3>Artisan Hearth Pizza</h3>
+                            <p>Thin-crust stone-baked pizza topped with spicy pepperoni, savory sausage, and a bubbling three-cheese blend.</p>
+                            <div class="dish-meta">
+                                <span class="metric-pill"><i data-lucide="flame"></i> Stone Baked</span>
+                                <span class="metric-pill"><i data-lucide="layers"></i> Triple Meat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Berry Cake -->
+                    <div class="dish-card">
+                        <div class="dish-img-container">
+                            <img src="assets/personal/cake_final.jpg" alt="Berry Chantilly Cake" class="dish-img">
+                        </div>
+                        <div class="dish-info">
+                            <h3>Fresh Berry Chantilly Cake</h3>
+                            <p>Hand-crafted vanilla sponge layered with fresh Chantilly cream and a vibrant medley of seasonal berries.</p>
+                            <div class="dish-meta">
+                                <span class="metric-pill"><i data-lucide="star"></i> Signature</span>
+                                <span class="metric-pill"><i data-lucide="clock"></i> Zero-Retard</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Section: Compliance -->
+            <div id="compliance" class="content-section">
+                <header class="section-header">
+                    <h2>Studio Compliance</h2>
+                    <p>Colorado Cottage Food Law & Certifications</p>
+                </header>
+                <div class="compliance-grid">
+                    <div class="stat-card">
+                        <h3>Next CSU Workshop</h3>
+                        <p class="value">March 24, 2026</p>
+                        <p class="subtext">Certification Target</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Certification Cost</h3>
+                        <p class="value">$10 / $50 USD</p>
+                        <p class="subtext">Balance Remaining</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Food Safety Status</h3>
+                        <p class="value" style="color: var(--accent-sage);">Authorized</p>
+                        <p class="subtext">Boulder County Health</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section: Service -->
+            <div id="service" class="content-section">
+                <header class="section-header">
+                    <h2>Local Production & Delivery</h2>
+                    <p>Artisan quality, directly to your door.</p>
+                </header>
+                <div class="service-content">
+                    <div class="artisan-card">
+                        <h3>Boulder Delivery Radius</h3>
+                        <p>We provide fresh delivery within a 15-mile radius of the Boulder studio. Orders must be placed 48 hours in advance for proofing.</p>
+                        <ul class="feature-list" style="margin-top: 20px;">
+                            <li><i data-lucide="check-circle"></i> Batch-to-Door Tracking</li>
+                            <li><i data-lucide="check-circle"></i> Sustainable Packaging</li>
+                            <li><i data-lucide="check-circle"></i> Contactless Drop-off</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
